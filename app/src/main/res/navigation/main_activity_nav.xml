@@ -30,4 +30,9 @@
         android:name="com.serdararici.travelguide.View.ChatBotFragment"
         android:label="fragment_chat_bot"
         tools:layout="@layout/fragment_chat_bot" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.serdararici.travelguide.View.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>
