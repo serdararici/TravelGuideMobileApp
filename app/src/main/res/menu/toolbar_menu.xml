@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/mainFragment"
+        android:icon="@drawable/baseline_home_24_black"
+        android:title="@string/home" />
+    <item
+        android:id="@+id/exploreFragment"
+        android:icon="@drawable/baseline_explore_24_black"
+        android:title="@string/explore" />
+    <item
+        android:id="@+id/mapFragment"
+        android:icon="@drawable/baseline_map_24_black"
+        android:title="@string/map" />
+    <item
+        android:id="@+id/chatBotFragment"
+        android:icon="@drawable/baseline_chat_24_black"
+        android:title="@string/chatBot" />
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/baseline_person_24_black"
+        android:title="@string/profile" />
+    <item
+        android:id="@+id/settingsFragment"
+        android:icon="@drawable/baseline_settings_24_black"
+        android:title="@string/settings" />
+</menu>
