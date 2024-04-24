@@ -35,4 +35,9 @@
         android:name="com.serdararici.travelguide.View.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/googleMapFragment"
+        android:name="com.serdararici.travelguide.View.GoogleMapFragment"
+        android:label="fragment_google_map"
+        tools:layout="@layout/fragment_google_map" />
 </navigation>

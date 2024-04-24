@@ -1,18 +1,18 @@
-package com.serdararici.travelguide
+package com.serdararici.travelguide.View
 
+import android.annotation.SuppressLint
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
+import com.serdararici.travelguide.R
 import com.serdararici.travelguide.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
+    //private var mGoogleMap:GoogleMap? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -24,16 +24,23 @@ class MainActivity : AppCompatActivity() {
         NavigationUI.setupWithNavController(binding.navigationView,navHostFragment.navController)
 
         setSupportActionBar(binding.materialToolbar)
-        val toggle = ActionBarDrawerToggle(this, binding.drawer,binding.materialToolbar,R.string.nav_open, R.string.nav_close)
+        val toggle = ActionBarDrawerToggle(this, binding.drawer,binding.materialToolbar,
+            R.string.nav_open,
+            R.string.nav_close
+        )
         binding.drawer.addDrawerListener(toggle)
         toggle.syncState()
 
         val header = binding.navigationView.inflateHeaderView(R.layout.nav_header)
+
+        //val mapFragment = supportFragmentManager.findFragmentById(R.id.mapFragment) as SupportMapFragment
+        //mapFragment.getMapAsync(this)
     }
 
 
 
 
+    @SuppressLint("MissingSuperCall")
     override fun onBackPressed() {
         if (binding.drawer.isDrawerOpen((GravityCompat.START))) {
             binding.drawer.closeDrawer(GravityCompat.START)
@@ -41,6 +48,10 @@ class MainActivity : AppCompatActivity() {
             onBackPressedDispatcher.onBackPressed()
         }
     }
+
+    /*override fun onMapReady(googleMap: GoogleMap) {
+        mGoogleMap = googleMap
+    }*/
 
 
 }

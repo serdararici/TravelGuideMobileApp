@@ -47,6 +47,14 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+
+    //Google maps
+    implementation("com.google.android.gms:play-services-maps:18.2.0")
+    //Location
+    implementation("com.google.android.gms:play-services-location:21.2.0")
+    //Places API
+    implementation("com.google.android.libraries.places:places:3.4.0")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -54,6 +62,8 @@ dependencies {
     //Navigation Component
     implementation ("androidx.navigation:navigation-fragment-ktx:$nav_version")
     implementation ("androidx.navigation:navigation-ui-ktx:$nav_version")
+
+
 
 
 }

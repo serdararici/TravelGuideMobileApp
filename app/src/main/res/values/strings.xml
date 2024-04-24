@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">TravelGuide</string>
+    <string name="google_map_api_key">AIzaSyBQEro1UFVzDJ2oJ-v_F6IUNy_86f2DccE</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home">Anasayfa</string>
@@ -21,4 +22,36 @@
     <string name="result">Sonuç:</string>
     <string name="date_format">GG/AA/YYYY</string>
     <string name="drawerText">Dünyayı Keşfet.</string>
+
+    //MapFragment
+    <string name="menu">Menü</string>
+    <string name="location">Konum</string>
+    <string name="normal_map">Normal Harita</string>
+    <string name="hybrid_map">Hibrit Harita</string>
+    <string name="satellite_map">Uydu Haritası</string>
+    <string name="terrain_map">Arazi Haritası</string>
+    <string name="zoomIn">Yaklaştır</string>
+    <string name="zoomOut">Uzaklaştır</string>
+    <string name="locationRequestGranted">Konum izni verildi.</string>
+    <string name="locationRequestDenied">Konum izni reddedildi.</string>
+    <string name="yourLocation">Konumunuz</string>
+    <string name="locationPermissionMessage">Konumunuzu bulmak için konum iznine ihtiyacınız var.</string>
+    <string name="locationDeniedMessage">Konum izni reddedildi. Lütfen ayarlardan etkinleştirin.</string>
+    <string name="selectedPlaceErrorMessage">Seçilen yerin adı veya konumu yok!</string>
+    <string name="mapLongClickMessage">İşareti kaldırmak için üzerine tıklayın.</string>
+    <string name="mapMarkerClickMessage">Bu işareti kaldırmak istiyor musunuz?</string>
+    <string name="streetView">Sokak Görüntüsü</string>
+    <string name="streetViewMessage">Sokak Görüntüsü için haritada bir yere dokunarak seçim yapın.</string>
+    <string name="restaurants">Restaurantlar</string>
+    <string name="nearRestaurants">Yakınınızdaki Restaurantlar.</string>
+    <string name="restaurantNotFound">Yakınınızda Restaurant Bulunamadı.</string>
+    <string name="hospitals">Hastaneler</string>
+    <string name="nearHospitals">Yakınınızdaki Hastaneler.</string>
+    <string name="hospitalNotFound">Yakınınızda Hastane Bulunamadı.</string>
+    <string name="cafes">Kafeler</string>
+    <string name="nearCafes">Yakınınızdaki Kafeler.</string>
+    <string name="cafeNotFound">Yakınınızda Kafe Bulunamadı.</string>
+    <string name="hotels">Oteller</string>
+    <string name="nearHotels">Yakınınızdaki Oteller.</string>
+    <string name="hotelNotFound">Yakınınızda Otel Bulunamadı.</string>
 </resources>
