@@ -19,7 +19,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+        android:id="@+id/cardViewCountry"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
@@ -113,14 +113,14 @@
         android:layout_marginTop="8dp"
         android:backgroundTint="@color/white"
         android:drawableLeft="@drawable/baseline_restaurant_24_black"
+        android:ellipsize="end"
+        android:singleLine="true"
         android:text="@string/restaurants"
         android:textColor="@color/black"
         android:textSize="10sp"
-        android:ellipsize="end"
-        android:singleLine="true"
+        app:layout_constraintEnd_toStartOf="@id/btnCafes"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
-        app:layout_constraintEnd_toStartOf="@id/btnCafes"/>
+        app:layout_constraintTop_toBottomOf="@+id/cardViewCountry" />
 
     <Button
         android:id="@+id/btnCafes"
@@ -136,7 +136,7 @@
         android:ellipsize="end"
         android:singleLine="true"
         app:layout_constraintStart_toEndOf="@+id/btRestaurants"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewCountry"
         app:layout_constraintEnd_toStartOf="@id/btnHotels"/>
 
     <Button
@@ -155,7 +155,7 @@
         android:singleLine="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnCafes"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+        app:layout_constraintTop_toBottomOf="@+id/cardViewCountry" />
 
 
 

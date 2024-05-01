@@ -6,6 +6,7 @@
     <string name="home">Anasayfa</string>
     <string name="explore">Keşfet</string>
     <string name="map">Harita</string>
+    <string name="countries">Ülkeler</string>
     <string name="chatBot">ChatBot</string>
     <string name="profile">Profil</string>
     <string name="settings">Ayarlar</string>
@@ -54,4 +55,17 @@
     <string name="hotels">Oteller</string>
     <string name="nearHotels">Yakınınızdaki Oteller.</string>
     <string name="hotelNotFound">Yakınınızda Otel Bulunamadı.</string>
+
+    //Country Fragment
+    <string name="country">Ülke</string>
+    <string name="capital">Başkent: </string>
+    <string name="language">Dil: </string>
+    <string name="region">Bölge: </string>
+    <string name="population">Nüfus: </string>
+    <string name="area">Alan: </string>
+    <string name="currency">Para Birimi: </string>
+    <string name="showOnGoogleMaps">Google haritalarda göster</string>
+    <string name="selectCountry">Bir ülke seçimi yapınız.</string>
+    <string name="noInternet">İnternet bağlantınızı kontrol ediniz.</string>
+
 </resources>

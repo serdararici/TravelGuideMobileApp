@@ -14,6 +14,10 @@
         android:icon="@drawable/baseline_map_24_black"
         android:title="@string/map" />
     <item
+        android:id="@+id/countryFragment"
+        android:icon="@drawable/baseline_airplanemode_active_24_black"
+        android:title="@string/countries" />
+    <item
         android:id="@+id/chatBotFragment"
         android:icon="@drawable/baseline_chat_24_black"
         android:title="@string/chatBot" />

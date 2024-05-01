@@ -9,35 +9,83 @@
         android:id="@+id/mainFragment"
         android:name="com.serdararici.travelguide.View.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_chatBotFragment"
+            app:destination="@id/chatBotFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_exploreFragment"
+            app:destination="@id/exploreFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_countryFragment"
+            app:destination="@id/countryFragment" />
+    </fragment>
     <fragment
         android:id="@+id/exploreFragment"
         android:name="com.serdararici.travelguide.View.ExploreFragment"
         android:label="fragment_explore"
-        tools:layout="@layout/fragment_explore" />
+        tools:layout="@layout/fragment_explore" >
+        <action
+            android:id="@+id/action_exploreFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.serdararici.travelguide.View.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
     <fragment
         android:id="@+id/mapFragment"
         android:name="com.serdararici.travelguide.View.MapFragment"
         android:label="fragment_map"
-        tools:layout="@layout/fragment_map" />
+        tools:layout="@layout/fragment_map" >
+        <action
+            android:id="@+id/action_mapFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
     <fragment
         android:id="@+id/chatBotFragment"
         android:name="com.serdararici.travelguide.View.ChatBotFragment"
         android:label="fragment_chat_bot"
-        tools:layout="@layout/fragment_chat_bot" />
+        tools:layout="@layout/fragment_chat_bot" >
+        <action
+            android:id="@+id/action_chatBotFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.serdararici.travelguide.View.SettingsFragment"
         android:label="fragment_settings"
-        tools:layout="@layout/fragment_settings" />
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
     <fragment
         android:id="@+id/googleMapFragment"
         android:name="com.serdararici.travelguide.View.GoogleMapFragment"
         android:label="fragment_google_map"
         tools:layout="@layout/fragment_google_map" />
+    <fragment
+        android:id="@+id/countryFragment"
+        android:name="com.serdararici.travelguide.View.CountryFragment"
+        android:label="fragment_country"
+        tools:layout="@layout/fragment_country" >
+        <action
+            android:id="@+id/action_countryFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
 </navigation>
