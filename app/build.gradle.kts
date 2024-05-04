@@ -1,6 +1,9 @@
+
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("androidx.navigation.safeargs")
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
 android {
@@ -15,6 +18,13 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        var apikeyGemini = "Unknown"
+        if (project.hasProperty("API_KEY_GEMINI")) {
+            apikeyGemini = project.property("API_KEY_GEMINI") as String
+        }
+        buildConfigField("String", "API_KEY_GEMINI", "\"${apikeyGemini}\"")
+
     }
 
     buildTypes {
@@ -36,6 +46,7 @@ android {
 
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 }
 
@@ -71,15 +82,17 @@ dependencies {
     implementation("com.google.code.gson:gson:2.6.1")
     implementation("com.squareup.retrofit2:converter-gson:2.1.0")
     //MVVM
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
     implementation("androidx.activity:activity-ktx:1.9.0")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
-
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
+    // Lifecycles only (without ViewModel or LiveData)
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
     //Picasso
     implementation("com.squareup.picasso:picasso:2.71828")
-
-
-
+    //Gemini
+    implementation("com.google.ai.client.generativeai:generativeai:0.1.2")
+    //CircleImage
+    implementation("de.hdodenhof:circleimageview:3.1.0")
 
 
 }

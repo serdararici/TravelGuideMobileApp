@@ -87,5 +87,26 @@
         <action
             android:id="@+id/action_countryFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_countryFragment_to_countryGeminiResponseFragment"
+            app:destination="@id/countryGeminiResponseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/countryGeminiResponseFragment"
+        android:name="com.serdararici.travelguide.View.CountryGeminiResponseFragment"
+        android:label="fragment_country_gemini_response"
+        tools:layout="@layout/fragment_country_gemini_response" >
+        <action
+            android:id="@+id/action_countryGeminiResponseFragment_to_countryFragment"
+            app:destination="@id/countryFragment" />
+        <argument
+            android:name="countryName"
+            app:argType="string" />
+        <argument
+            android:name="category"
+            app:argType="string" />
+        <argument
+            android:name="prompt"
+            app:argType="string" />
     </fragment>
 </navigation>

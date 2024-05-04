@@ -5,11 +5,16 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.google.ai.client.generativeai.GenerativeModel
+import com.serdararici.travelguide.BuildConfig
 import com.serdararici.travelguide.Model.Country
 import com.serdararici.travelguide.Utils.ApiUtils
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -19,6 +24,10 @@ class CountryViewModel : ViewModel() {
     val countries: LiveData<List<Country>> = _countries
     //private val countries = ArrayList<String>()
     //private lateinit var countryAdapter: ArrayAdapter<String>
+    private val _responseText = MutableLiveData<String>()
+    val selectedCountryIndex = MutableLiveData<Int>(0)
+    private val apiKey = BuildConfig.API_KEY_GEMINI
+    val responseText: LiveData<String> get() = _responseText
 
     init {
         fetchCountries()
@@ -78,56 +87,15 @@ class CountryViewModel : ViewModel() {
         })
     }
 
-    /*fun getCountriesName(spinner: Spinner) {
-        val apiService = ApiUtils.getCountriesAPI()
-        //val apiService = RetrofitClient.retrofit.create(CountriesAPI::class.java)
-        //apiService.getCountries().enqueue(object : Callback<NamesResult>
-
-        apiService.getCountries().enqueue(object : Callback<List<Country>> {
-            override fun onResponse(call: Call<List<Country>>, response: Response<List<Country>>) {
-                if (response.isSuccessful) {
-                    val countries = response.body() ?: emptyList()
-
-                    // Tüm ülke isimlerini bir listeye ekle
-                    val countryNames = countries.map { it.name.common }
-
-                    // Bu listeyi spinner'a eklemek için ArrayAdapter kullan
-                    val countryAdapter = ArrayAdapter(
-                        this@MainActivity,
-                        android.R.layout.simple_spinner_item,
-                        countryNames
-                    )
-                    countryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                    spinner.adapter = countryAdapter
-
-                    spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-                        override fun onItemSelected(
-                            parent: AdapterView<*>?,
-                            view: View?,
-                            position: Int,
-                            id: Long
-                        ) {
-                            // Seçilen ülkeyi bul
-                            val selectedCountry = countries[position]
-
-                            Log.d("Country", "Name: ${selectedCountry.name.common}")
-                            Log.d("Country", "Capital: ${selectedCountry.capital?.joinToString()}")
-                            Log.d("Country", "Population: ${selectedCountry.population}")
-                            Log.d("Country", "Area: ${selectedCountry.area}")
-                            Log.d("Country", "Currency: ${selectedCountry.currencies?.values?.joinToString()}")
-                            Log.d("Country", "Google Maps: ${selectedCountry.maps?.googleMaps}")
-                        }
-                        override fun onNothingSelected(parent: AdapterView<*>?) {
-                            // Hiçbir şey seçilmediğinde yapılacak işlem
-                        }
-                    }
-                } else {
-                    Log.e("Error", "Response code: ${response.code()}")
-                }
-            }
-            override fun onFailure(call: Call<List<Country>>, t: Throwable) {
-                Log.e("Error", "API call failed: ${t.message}")
-            }
-        })
-    }*/
+    fun generateContent(cityName: String) {
+        viewModelScope.launch {
+            val generativeModel = GenerativeModel(
+                modelName = "gemini-pro",
+                apiKey = apiKey
+            )
+            val prompt = "$cityName'da gezilecek yerler nelerdir?"
+            val response = generativeModel.generateContent(prompt)
+            _responseText.value = response.text
+        }
+    }
 }

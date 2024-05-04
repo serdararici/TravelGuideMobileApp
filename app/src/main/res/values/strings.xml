@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">TravelGuide</string>
-    <string name="google_map_api_key">AIzaSyBQEro1UFVzDJ2oJ-v_F6IUNy_86f2DccE</string>
+    <string name="app_name" translatable="false">TravelGuide</string>
+    <string name="google_map_api_key" translatable="false">AIzaSyBQEro1UFVzDJ2oJ-v_F6IUNy_86f2DccE</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home">Anasayfa</string>
@@ -67,5 +67,26 @@
     <string name="showOnGoogleMaps">Google haritalarda göster</string>
     <string name="selectCountry">Bir ülke seçimi yapınız.</string>
     <string name="noInternet">İnternet bağlantınızı kontrol ediniz.</string>
+    <string name="overview">Genel Bakış</string>
+    <string name="mustSeePlaces">Görülmesi Gereken Yerler</string>
+    <string name="foodCulture">Yemek Kültürü</string>
+    <string name="artandHistory">Sanat ve Tarih</string>
+    <string name="events">Özel Günler ve Etkinlikler</string>
+    <string name="transportation">Ulaşım</string>
+    <string name="climate">İklim ve Hava Durumu</string>
+    <string name="naturalPlaces">Tabiat ve Doğal Güzellikler</string>
+    <string name="accommodation">Konaklama</string>
+    <string name="nightLife">Eğlence ve Gece Hayatı</string>
+    <string name="healthandSecurity">Güvenlik ve Sağlık</string>
+    <string name="practicalInfo">Pratik Bilgiler</string>
+
+    //CountryGeminiResponse Fragment
+    <string name="pleaseWait">Lütfen Bekleyiniz.</string>
+    <string name="noContentWarning">İçerik yüklenemedi, lütfen tekrar deneyiniz.</string>
+    <string name="loading">Yükleniyor...</string>
+    <string name="forCountry">ülkesi için</string>
+    <string name="getInfoAbout">hakkında bilgi verebilir misin?</string>
+    //ChatBot Fragment
+    <string name="chatBotMessage">Nasıl yardımcı olabilirim?</string>
 
 </resources>
