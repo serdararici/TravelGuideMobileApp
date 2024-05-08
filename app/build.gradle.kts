@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid)
     id("androidx.navigation.safeargs")
     id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -93,6 +94,10 @@ dependencies {
     implementation("com.google.ai.client.generativeai:generativeai:0.1.2")
     //CircleImage
     implementation("de.hdodenhof:circleimageview:3.1.0")
+    //Firebase
+    implementation(platform("com.google.firebase:firebase-bom:33.0.0"))
+    implementation(libs.firebase.database)
+    implementation("com.google.firebase:firebase-auth")
 
 
 }

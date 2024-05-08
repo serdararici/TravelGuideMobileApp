@@ -23,6 +23,8 @@
     <string name="result">Sonuç:</string>
     <string name="date_format">GG/AA/YYYY</string>
     <string name="drawerText">Dünyayı Keşfet.</string>
+    <string name="choose_time">Saat Seçiniz</string>
+    <string name="choose_date">Tarih Seçiniz</string>
 
     //MapFragment
     <string name="menu">Menü</string>
@@ -88,5 +90,49 @@
     <string name="getInfoAbout">hakkında bilgi verebilir misin?</string>
     //ChatBot Fragment
     <string name="chatBotMessage">Nasıl yardımcı olabilirim?</string>
+
+    //SignIn
+    <string name="signIn">Giriş Yap</string>
+    <string name="signInBigLetter">GİRİŞ YAP</string>
+    <string name="putPaswordSignIn">Şifrenizi giriniz</string>
+    <string name="forgetPassword">Şifremi Unuttum</string>
+    <string name="dontHaveAccount">Hesabın yok mu? Kayıt Ol</string>
+    <string name="welcome">Hoşgeldin: </string>
+    <string name="signInFailed">Giriş başarısız! - Email veya şifre yanlış. Tekrar deneyiniz.</string>
+    //SignUp
+    <string name="signUp">Kayıt Ol</string>
+    <string name="signUpBigLetter">KAYIT OL</string>
+    <string name="putNameSurname">İsim ve Soyisim giriniz</string>
+    <string name="birthDateSignUp">Doğum tarihinizi giriniz(GG/AA/YYYY) </string>
+    <string name="alreadyHaveAccount">Zaten bir hesabınız var mı? Giriş Yap</string>
+    <string name="putEmail">Email adresinizi giriniz</string>
+    <string name="putPasword">Şifrenizi giriniz (en az 6 karakter)</string>
+    <string name="putPasswordAgain">Şifrenizi tekrar giriniz</string>
+    <string name="requiredUserName">İsim alanı boş geçilemez!</string>
+    <string name="requiredBirtDate">Doğum tarihi alanı boş geçilemez!</string>
+    <string name="requiredPassword">Şifre alanı boş geçilemez!</string>
+    <string name="passwordLength">Şifre en az 6 karakterden oluşmalıdır!</string>
+    <string name="requiredPasswordAgain">Şifre tekrar alanı boş geçilemez!</string>
+    <string name="registrationSuccess">Kayıt Başarılı!</string>
+    <string name="registrationFailed">Kayıt Başarısız!</string>
+    <string name="passwordCheck">Uyarı: Girilen şifreler eşleşmiyor!</string>
+    //SignOut
+    <string name="signingOut">Çıkış yapılıyor...</string>
+    <string name="signedOut">hesabından çıkış yapıldı.</string>
+    //ForgetPassword
+    <string name="email">Email</string>
+    <string name="requiredEmail">Email alanı boş geçilemez!</string>
+    <string name="checkEmailFormat">Geçerli bir email adresi giriniz!</string>
+    <string name="checkYourEmail">Yeni Şifre oluşturmak için email kutunu kontrol et</string>
+    <string name="infoForgetPasword">Girdiğiniz email adresine gelecek olan mail ile şifrenizi değiştirebilirsiniz.</string>
+    <string name="forgetPasswordMessage">Şifrenizi mi unuttunuz? Endişelenmeyin! Lütfen hesabınızla ilişkili e-posta adresini girin. </string>
+    //Explore
+    //ExploreCreate
+    <string name="exploreCreateTitle">Başlık</string>
+    <string name="exploreCreateCountry">Ülke Adı</string>
+    <string name="exploreCreatePlace">Şehir veya bir mekan adı giriniz</string>
+    <string name="exploreCreateTxt">Ne paylaşmak istersiniz?</string>
+    <string name="exploreCreateRatingBarMessage">Bu mekanı tavsiye eder misiniz?</string>
+    <string name="exploreCreateChooseImage">Fotoğraf Ekle</string>
 
 </resources>

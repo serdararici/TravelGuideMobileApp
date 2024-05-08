@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "957309383821",
+    "project_id": "finalhomework-1140c",
+    "storage_bucket": "finalhomework-1140c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:957309383821:android:859bab4b27dd5465281ec4",
+        "android_client_info": {
+          "package_name": "com.serdararici.travelguide"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYtY-YGHA-k01fVCv_zBa1lYUyH6kliXY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

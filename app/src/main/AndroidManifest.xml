@@ -19,15 +19,18 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".View.MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".View.StreetViewActivity"
             android:exported="false" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_map_api_key"></meta-data>
+            android:value="@string/google_map_api_key" />
 
         <activity
-            android:name=".View.MainActivity"
+            android:name=".View.AuthActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,9 +38,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="API_KEY_GEMINI"
-            android:value = "${API_KEY_GEMINI}"/>
+            android:value="${API_KEY_GEMINI}" />
     </application>
 
 </manifest>

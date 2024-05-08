@@ -29,4 +29,8 @@
         android:id="@+id/settingsFragment"
         android:icon="@drawable/baseline_settings_24_black"
         android:title="@string/settings" />
+    <item
+        android:id="@+id/signOutFragment"
+        android:icon="@drawable/baseline_logout_24_black"
+        android:title="@string/signOut" />
 </menu>

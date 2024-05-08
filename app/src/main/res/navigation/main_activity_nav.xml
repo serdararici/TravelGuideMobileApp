@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_mainFragment_to_countryFragment"
             app:destination="@id/countryFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_signOutFragment"
+            app:destination="@id/signOutFragment" />
     </fragment>
     <fragment
         android:id="@+id/exploreFragment"
@@ -37,6 +40,12 @@
         <action
             android:id="@+id/action_exploreFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_exploreFragment_to_exploreDetailsFragment"
+            app:destination="@id/exploreDetailsFragment" />
+        <action
+            android:id="@+id/action_exploreFragment_to_exploreCreateFragment"
+            app:destination="@id/exploreCreateFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -73,6 +82,9 @@
         <action
             android:id="@+id/action_settingsFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_signOutFragment"
+            app:destination="@id/signOutFragment" />
     </fragment>
     <fragment
         android:id="@+id/googleMapFragment"
@@ -108,5 +120,31 @@
         <argument
             android:name="prompt"
             app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/signOutFragment"
+        android:name="com.serdararici.travelguide.View.SignOutFragment"
+        android:label="fragment_sign_out"
+        tools:layout="@layout/fragment_sign_out" />
+    <fragment
+        android:id="@+id/exploreDetailsFragment"
+        android:name="com.serdararici.travelguide.View.ExploreDetailsFragment"
+        android:label="fragment_explore_details"
+        tools:layout="@layout/fragment_explore_details" >
+        <action
+            android:id="@+id/action_exploreDetailsFragment_to_exploreFragment"
+            app:destination="@id/exploreFragment" />
+        <argument
+            android:name="ExploreDetails"
+            app:argType="com.serdararici.travelguide.Model.Explore" />
+    </fragment>
+    <fragment
+        android:id="@+id/exploreCreateFragment"
+        android:name="com.serdararici.travelguide.View.ExploreCreateFragment"
+        android:label="fragment_explore_create"
+        tools:layout="@layout/fragment_explore_create" >
+        <action
+            android:id="@+id/action_exploreCreateFragment_to_exploreFragment"
+            app:destination="@id/exploreFragment" />
     </fragment>
 </navigation>

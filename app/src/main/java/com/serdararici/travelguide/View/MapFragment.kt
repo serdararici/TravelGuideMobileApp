@@ -16,6 +16,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.PopupMenu
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.PermissionChecker.checkSelfPermission
@@ -83,6 +84,7 @@ class MapFragment : Fragment(), OnMapReadyCallback {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val toolbar = (activity as AppCompatActivity).supportActionBar?.setTitle(R.string.app_name)
         super.onViewCreated(view, savedInstanceState)
 
         val popupMenu = PopupMenu(requireContext(),binding.ibMapMenu)

@@ -12,6 +12,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
@@ -54,7 +55,8 @@ class CountryFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        navController = Navigation.findNavController(view)
+        val toolbar = (activity as AppCompatActivity).supportActionBar?.setTitle(R.string.countries)
+        navController = Navigation.findNavController(requireView())
         val spinner: Spinner = binding.spinnerCountry
         binding.progressBar.visibility = View.VISIBLE
 
