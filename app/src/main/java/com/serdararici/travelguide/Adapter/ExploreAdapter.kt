@@ -7,10 +7,13 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.serdararici.travelguide.Model.Explore
 import com.serdararici.travelguide.View.ExploreFragmentDirections
+import com.serdararici.travelguide.ViewModel.ExploreViewModel
 import com.serdararici.travelguide.databinding.ExploreRecyclerRowBinding
+import com.squareup.picasso.Picasso
 
 class ExploreAdapter (var mContext: Context,
-                      var exploreList: List<Explore>)
+                      var exploreList: List<Explore>,
+                      var viewModel: ExploreViewModel)
     : RecyclerView.Adapter<ExploreAdapter.ExploreViewHolder>(){
     inner class ExploreViewHolder(binding:ExploreRecyclerRowBinding) : RecyclerView.ViewHolder(binding.root){
         var binding:ExploreRecyclerRowBinding
@@ -33,7 +36,14 @@ class ExploreAdapter (var mContext: Context,
         val explore = exploreList.get(position)
         holder.binding.tvExploreTitle.text = explore.exploreTitle
         holder.binding.tvExploreTxt.text = explore.exploreDetails
-        holder.binding.tvExplorePlaceName.text = explore.explorePlaceName
+        var explorePlaceName = "${explore.explorePlace} - ${explore.exploreCountry}"
+        holder.binding.tvExplorePlaceName.text = explorePlaceName
+        holder.binding.ratingBar.rating = explore.exploreRatingNumber!!.toFloat()
+
+        val imageView = holder.binding.iVExploreImage
+        Picasso.get()
+            .load(explore.exploreImageUri)
+            .into(imageView)
 
         holder.binding.exploreCardView.setOnClickListener {
             val action = ExploreFragmentDirections.actionExploreFragmentToExploreDetailsFragment(explore)

@@ -1,86 +1,117 @@
 package com.serdararici.travelguide.Repository
 
+import android.net.Uri
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
+import com.google.android.gms.auth.api.signin.internal.Storage
 import com.google.firebase.Firebase
 import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.storage.FirebaseStorage
+import com.serdararici.travelguide.Model.Explore
 import com.serdararici.travelguide.Model.Profile
 import java.sql.Date
 import java.util.Calendar
 
 class ProfileRepository {
+    val db = FirebaseDatabase.getInstance()
+    var reference = db.getReference("profile")
+    val referenceStorage = FirebaseStorage.getInstance().getReference("images")
+    var profileListLive:MutableLiveData<List<Profile>>
+    var profileImgUrl:MutableLiveData<String>
 
-    /*
-
-    //private val database = Firebase.firestore
-    var profileList = ArrayList<Profile>()
-    //val userEmail = FirebaseAuth.getInstance().currentUser?.email as Any
-    var profileListLive: MutableLiveData<ArrayList<Profile>>
+    val userEmail = FirebaseAuth.getInstance().currentUser?.email
 
     init {
         profileListLive = MutableLiveData()
+        profileImgUrl = MutableLiveData()
     }
 
-    fun getProfiles() : MutableLiveData<ArrayList<Profile>> {
+    fun getProfiles() : MutableLiveData<List<Profile>> {
         return profileListLive
     }
-    fun addProfile(userName:String, userEmail:String,phoneNumber:String,birthDate:String,height:Double,weight:Double){
-        val profileHashMap = hashMapOf<String, Any>(
-            "userEmail" to userEmail,
-            "userName" to userName,
-            "phoneNumber" to phoneNumber,
-            "birthDate" to birthDate,
-            "height" to height,
-            "weight" to weight,
-            "addedDate" to Timestamp.now())
 
 
-        database.collection("profile").add(profileHashMap)
-    }
-    fun deleteProfile(profileId:String){
-        database.collection("profile").document(profileId).delete()
-    }
-    fun updateProfile(profileId:String,userName:String, userEmail:String,phoneNumber:String,birthDate:String,height:Double,weight:Double){
-        val profileHashMap = hashMapOf<String,Any>(
-            "profileId" to profileId,
-            "userName" to userName,
-            "userEmail" to userEmail,
-            "phoneNumber" to phoneNumber,
-            "birthDate" to birthDate,
-            "height" to height,
-            "weight" to weight,
-            "addedDate" to Timestamp.now())
-        database.collection("profile").document(profileId).update(profileHashMap)
+    fun profileCreateRepository(userName:String, userEmail:String,birthDate:String,userBio:String,userNumberOfPosts:Int,profileImgUri:String,profileCreatedDate:Long){
+        val newProfile = Profile("",userName, userEmail,birthDate,userBio,userNumberOfPosts,profileImgUri,profileCreatedDate)
+        reference.push().setValue(newProfile)
     }
 
-    fun getProfile(){
-        val userEmail = FirebaseAuth.getInstance().currentUser?.email as Any
-        database.collection("profile").whereEqualTo("userEmail", userEmail)
-            .addSnapshotListener { snapshot, exception ->
-                if(exception!=null){
+    fun profileUpdateRepository(profileId: String, userName:String, userEmail:String,birthDate:String,userBio:String?="",userNumberOfPosts:Int,profileImgUri:String?="",profileCreatedDate:Long){
+        val map = HashMap<String,Any>()
+        map["userName"] = userName
+        map["userEmail"] = userEmail
+        map["birthDate"] = birthDate
+        userBio?.let { map["userBio"] = it }
+        map["userNumberOfPosts"] = userNumberOfPosts
+        profileImgUri?.let { map["profileImgUri"] = it }
+        map["profileCreatedDate"] = profileCreatedDate
+        reference.child(profileId).updateChildren(map)
+    }
 
-                }else{
-                    if(snapshot!=null){
-                        if(!snapshot.isEmpty){
-                            val documents = snapshot.documents
+    fun searchRepository(searchingWord:String){
 
-                            profileList.clear()
+        reference.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val list = ArrayList<Profile>()
 
-                            for (document in documents) {
-                                val userEmail = document.get("userEmail") as String
-                                val userName = document.get("userName") as String
-                                val phoneNumber = document.get("phoneNumber") as String
-                                val birthDate = document.get("birthDate") as String
-                                val height = document.getDouble("height") as Double
-                                val weight = document.getDouble("weight") as Double
-                                val profileId = document.id
-
-                                val profiles = Profile(profileId,userName,userEmail,phoneNumber,birthDate,height,weight)
-                                profileList.add(profiles)
-                            }
-                            profileListLive.postValue(profileList)
+                for (d in snapshot.children){
+                    val profile = d.getValue(Profile::class.java)
+                    if (profile != null){
+                        if (profile.userName!!.lowercase().contains(searchingWord.lowercase())
+                            || profile.userEmail!!.lowercase().contains(searchingWord.lowercase()))
+                        {
+                            profile.profileId = d.key
+                            list.add(profile)
                         }
                     }
+                }
+                profileListLive.value = list
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Log.e("FirebaseError", "Firebase error")
+            }
+
+        })
+    }
+
+    fun getProfileRepository(){
+
+        reference.orderByChild("userEmail").equalTo(userEmail).addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val list = ArrayList<Profile>()
+
+                for (d in snapshot.children){
+                    val profile = d.getValue(Profile::class.java)
+                    if (profile != null){
+                        profile.profileId = d.key
+                        list.add(profile)
+                    }
+                }
+                profileListLive.value = list
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Log.e("FirebaseError", "Firebase error")
+            }
+
+        })
+    }
+
+    fun deleteProfileRepository(profileId:String){
+        reference.child(profileId).removeValue()
+    }
+
+    fun saveProfileImgRepository(uri: Uri,profileId:String){
+            referenceStorage.child(profileId).putFile(uri).addOnSuccessListener {task->
+                task.metadata!!.reference!!.downloadUrl.addOnSuccessListener {url->
+                    val imgUrl = url.toString()
+                    profileImgUrl.value = imgUrl
                 }
             }
     }
@@ -113,6 +144,5 @@ class ProfileRepository {
         return age
     }
 
-     */
 }
 

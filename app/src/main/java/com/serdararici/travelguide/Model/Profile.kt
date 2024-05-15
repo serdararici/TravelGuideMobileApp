@@ -7,6 +7,9 @@ import java.io.Serializable
 data class Profile(var profileId:String?="",
                    var userName: String?="",
                    var userEmail: String?="",
-                   var phoneNumber:String?="",
-                   var birthDate:String?="", ) : Serializable {
+                   var birthDate:String?="",
+                   var userBio:String?="",
+                   var userNumberOfPosts:Int?=0,
+                   var profileImgUri:String?="",
+                   var profileCreatedDate:Long?=0) : Serializable {
 }

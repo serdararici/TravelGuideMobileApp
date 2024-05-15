@@ -12,6 +12,10 @@ import androidx.navigation.fragment.navArgs
 import com.serdararici.travelguide.R
 import com.serdararici.travelguide.ViewModel.ExploreDetailsViewModel
 import com.serdararici.travelguide.databinding.FragmentExploreDetailsBinding
+import com.squareup.picasso.Picasso
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class ExploreDetailsFragment : Fragment() {
     private var _binding: FragmentExploreDetailsBinding?=null
@@ -41,14 +45,31 @@ class ExploreDetailsFragment : Fragment() {
         val exploreDetailsTitle = bundle.exploreDetails.exploreTitle
         val exploreDetailsDetails = bundle.exploreDetails.exploreDetails
         val exploreDetailsRatingNumber = bundle.exploreDetails.exploreRatingNumber
-        val exploreDetailsPlaceName = bundle.exploreDetails.explorePlaceName
+        val exploreDetailsCountry = bundle.exploreDetails.exploreCountry
+        val exploreDetailsPlace = bundle.exploreDetails.explorePlace
+        val exploreDetailsCategory = bundle.exploreDetails.exploreCategory
+        val exploreDetailsImage = bundle.exploreDetails.exploreImageUri
+        val exploreDetailsCreatedDate = bundle.exploreDetails.exploreCreatedDate
 
+        val date = Date(exploreDetailsCreatedDate!!)
+
+        // Tarihi insan tarafından okunabilir formata dönüştür
+        val dateFormat = SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.getDefault())
+        val formattedDate = dateFormat.format(date) // Dönüştürülmüş tarih
+
+        val explorePlaceName = "$exploreDetailsPlace - $exploreDetailsCountry"
         val number = exploreDetailsRatingNumber?.toFloat()
 
         binding.tvExploreDetailsTitle.text = exploreDetailsTitle
         binding.tvExploreDetailsTxt.text = exploreDetailsDetails
         binding.ratingBarExploreDetails.rating = number!!
-        binding.tvExploreDetailsPlaceName.text = exploreDetailsPlaceName
+        binding.tvExploreDetailsPlaceName.text = explorePlaceName
+        binding.tvExploreDetailsCategory.text = exploreDetailsCategory
+        binding.tvExploreDetailsCreatedDateResult.text = formattedDate
+        val imageView = binding.ivExploreDetails
+        Picasso.get()
+            .load(bundle.exploreDetails.exploreImageUri)
+            .into(imageView);
     }
 
 }

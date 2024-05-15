@@ -55,6 +55,15 @@
         <action
             android:id="@+id/action_profileFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_profileEditFragment"
+            app:destination="@id/profileEditFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_exploreEditFragment"
+            app:destination="@id/exploreEditFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_exploreDetailsFragment"
+            app:destination="@id/exploreDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/mapFragment"
@@ -137,6 +146,9 @@
         <argument
             android:name="ExploreDetails"
             app:argType="com.serdararici.travelguide.Model.Explore" />
+        <action
+            android:id="@+id/action_exploreDetailsFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
     <fragment
         android:id="@+id/exploreCreateFragment"
@@ -146,5 +158,29 @@
         <action
             android:id="@+id/action_exploreCreateFragment_to_exploreFragment"
             app:destination="@id/exploreFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileEditFragment"
+        android:name="com.serdararici.travelguide.View.ProfileEditFragment"
+        android:label="fragment_profile_edit"
+        tools:layout="@layout/fragment_profile_edit" >
+        <action
+            android:id="@+id/action_profileEditFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <argument
+            android:name="profileEdit"
+            app:argType="com.serdararici.travelguide.Model.Profile" />
+    </fragment>
+    <fragment
+        android:id="@+id/exploreEditFragment"
+        android:name="com.serdararici.travelguide.View.ExploreEditFragment"
+        android:label="fragment_explore_edit"
+        tools:layout="@layout/fragment_explore_edit" >
+        <action
+            android:id="@+id/action_exploreEditFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <argument
+            android:name="exploreEdit"
+            app:argType="com.serdararici.travelguide.Model.Explore" />
     </fragment>
 </navigation>

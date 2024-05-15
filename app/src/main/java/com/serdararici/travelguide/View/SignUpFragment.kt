@@ -15,6 +15,7 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.serdararici.travelguide.R
 import com.serdararici.travelguide.ViewModel.AuthViewModel
+import com.serdararici.travelguide.ViewModel.ProfileViewModel
 import com.serdararici.travelguide.databinding.FragmentSignUpBinding
 import java.util.Calendar
 
@@ -23,7 +24,7 @@ class SignUpFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var navController: NavController
     private val viewModel: AuthViewModel by viewModels()
-    //private val viewModelProfile: ProfileViewModel by viewModels()
+    private val viewModelProfile: ProfileViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -72,11 +73,13 @@ class SignUpFragment : Fragment() {
             val email = binding.etEmailAdressSignUp.text.toString()
             val birthDate = binding.etBirthDate.text.toString()
             val password = binding.etPasswordSignUp.text.toString()
+            var profileCreateDate = System.currentTimeMillis()
+            //var profileImgUri =  //buraya default bir link verilcek
 
             if (checkAll()) {
                 viewModel.signUpViewModel(email, password) { success, message ->
                     if(success){
-                        //viewModelProfile.addProfileViewModel(userName,email,"",birthDate,0.0,0.0)
+                        viewModelProfile.profileCreateViewModel(userName,email,birthDate,"",0,"",profileCreateDate)
                         Toast.makeText(requireContext(), R.string.registrationSuccess, Toast.LENGTH_LONG).show()
                         val intent = Intent(requireActivity(), MainActivity::class.java)
                         startActivity(intent)

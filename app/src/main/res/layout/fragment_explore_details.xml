@@ -18,7 +18,7 @@
                 android:id="@+id/ivExploreDetails"
                 android:layout_width="203dp"
                 android:layout_height="145dp"
-                android:layout_marginTop="61dp"
+                android:layout_marginTop="24dp"
                 android:src="@drawable/image_not_found"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -29,8 +29,8 @@
                 android:id="@+id/tvExploreDetailsTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="67dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
                 android:text="Başlık"
                 android:textSize="34sp"
                 android:textStyle="bold"
@@ -41,8 +41,8 @@
                 android:id="@+id/tvExploreDetailsTxt"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:text="Detay kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -54,24 +54,59 @@
                 style="@style/Widget.AppCompat.RatingBar.Indicator"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
                 android:numStars="5"
                 android:progressTint="#FFC107"
                 android:rating="3"
                 android:stepSize="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvExploreDetailsPlaceName" />
+                app:layout_constraintTop_toBottomOf="@+id/tvExploreDetailsTxt" />
 
             <TextView
                 android:id="@+id/tvExploreDetailsPlaceName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
                 android:text="Istanbul - Turkey"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvExploreDetailsTxt" />
+
+            <TextView
+                android:id="@+id/tvExploreDetailsCreatedDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/exploreDetailsCreatedDate"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvExploreDetailsCreatedDateResult"
+                app:layout_constraintTop_toBottomOf="@+id/tvExploreDetailsPlaceName"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/tvExploreDetailsCreatedDateResult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="-"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvExploreDetailsCreatedDate" />
+
+            <TextView
+                android:id="@+id/tvExploreDetailsCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="4dp"
+                android:text="Yemek ve kültür"
+                android:textColor="#606060"
+                app:layout_constraintBottom_toTopOf="@+id/tvExploreDetailsTxt"
+                app:layout_constraintEnd_toEndOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

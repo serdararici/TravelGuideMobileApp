@@ -25,6 +25,8 @@
     <string name="drawerText">Dünyayı Keşfet.</string>
     <string name="choose_time">Saat Seçiniz</string>
     <string name="choose_date">Tarih Seçiniz</string>
+    <string name="edit">Düzenle</string>
+    <string name="delete">Sil</string>
 
     //MapFragment
     <string name="menu">Menü</string>
@@ -134,5 +136,47 @@
     <string name="exploreCreateTxt">Ne paylaşmak istersiniz?</string>
     <string name="exploreCreateRatingBarMessage">Bu mekanı tavsiye eder misiniz?</string>
     <string name="exploreCreateChooseImage">Fotoğraf Ekle</string>
+    <string name="exploreTitleRequired">Başlık alanı boş bırakılamaz</string>
+    <string name="exploreCountryRequired">Ülke alanı boş bırakılamaz</string>
+    <string name="explorePlaceRequired">Mekan alanı boş bırakılamaz</string>
+    <string name="exploreDetailsRequired">Detay alanı boş bırakılamaz</string>
+    <string name="exploreCreateMessage">Gönderi başarıyla kaydedildi.</string>
+    <string name="category">Kategori</string>
+    <string name="category1">Kategori:</string>
+    <string name="all">Hepsi</string>
+    <string name="history">Tarih ve Kültür</string>
+    <string name="transportationAndAccommodation">Ulaşım ve Konaklama</string>
+    <string name="food">Yemek</string>
+    <string name="natureAndAdvanture">Doğa ve Macera</string>
+    <string name="Entertainment">Eğlence</string>
+    <string name="ExpreinceAndSuggestion">Deneyim ve Tavsiye</string>
+    <string-array name="category_array">
+        <item>Hepsi</item>
+        <item>Tarih ve Kültür</item>
+        <item>Ulaşım ve Konaklama</item>
+        <item>Yemek</item>
+        <item>Doğa ve Macera</item>
+        <item>Eğlence</item>
+        <item>Deneyim ve Tavsiye</item>
+    </string-array>
+
+    //ExploreEdit
+    <string name="exploreUpdateMessage">Gönderi başarıyla güncellendi.</string>
+    //ExploreDetails
+    <string name="visitDate">Ziyaret Tarihi: </string>
+    <string name="exploreDetailsCreatedDate">tarihinde oluşturuldu.</string>
+    //Profile
+    <string name="profilePost">gönderi</string>
+    <string name="profileAge">yaş</string>
+    <string name="btnProfileToProfileEdit">Profil düzenle</string>
+    <string name="profileJoined">tarihinde katıldı</string>
+    <string name="isDelete">silinsin mi?</string>
+    //ProfileEdit
+    <string name="ProfileChooseImg">Fotoğraf Seç</string>
+    <string name="ProfileNameAndSurname">İsim ve Soyisim</string>
+    <string name="ProfileBirthDate">Doğum Tarihi</string>
+    <string name="profileEditBio">Bio</string>
+    <string name="profileUpdated">Profil güncellendi</string>
+    <string name="maxCharacter">(Max 200 karakter)</string>
 
 </resources>

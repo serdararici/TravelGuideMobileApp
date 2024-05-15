@@ -8,6 +8,8 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.LinearLayoutCompat
 import androidx.appcompat.widget.SearchView
@@ -29,6 +31,10 @@ class ExploreFragment : Fragment(), SearchView.OnQueryTextListener {
     private lateinit var navController: NavController
     private lateinit var viewModelExplore: ExploreViewModel
 
+    private val categories = ArrayList<String>()
+    private lateinit var categoryAdapter:ArrayAdapter<String>
+    var selectedCategory = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val tempViewModel: ExploreViewModel by viewModels()
@@ -44,8 +50,59 @@ class ExploreFragment : Fragment(), SearchView.OnQueryTextListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val toolbar = (activity as AppCompatActivity).supportActionBar?.setTitle(R.string.explore)
 
+        binding.recyclerViewExplore.layoutManager = LinearLayoutManager(requireContext())
+        binding.recyclerViewExplore.setHasFixedSize(true)
+
         binding.fabExplore.setOnClickListener {
             Navigation.findNavController(it).navigate(R.id.action_exploreFragment_to_exploreCreateFragment)
+        }
+        categories.add(getString(R.string.all))
+        categories.add(getString(R.string.history))
+        categories.add(getString(R.string.transportationAndAccommodation))
+        categories.add(getString(R.string.food))
+        categories.add(getString(R.string.natureAndAdvanture))
+        categories.add(getString(R.string.Entertainment))
+        categories.add(getString(R.string.ExpreinceAndSuggestion))
+
+        categoryAdapter = ArrayAdapter(requireContext(),android.R.layout.simple_list_item_1,android.R.id.text1,categories)
+        binding.spinnerExplore.adapter = categoryAdapter
+
+        binding.spinnerExplore.onItemSelectedListener = object  : AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
+                var category = categories[position]
+                selectedCategory = category
+                //viewModelExplore.getExploreForCategoryViewModel(category)
+                //selectedCategory == getString(R.string.all)
+                if(position == 0 || selectedCategory == ""){
+                    viewModelExplore.getExploreViewModel()
+                    /*viewModelExplore.exploreListLive.observe(viewLifecycleOwner){
+                        val adapter = ExploreAdapter(requireContext(),it,viewModelExplore)
+                        binding.recyclerViewExplore.adapter = adapter
+                        binding.progressBarExplore.visibility = View.GONE
+                        println("if calisti")
+                    }*/
+                }else{
+                    viewModelExplore.getExploreForCategoryViewModel(category)
+                    /*viewModelExplore.categoryExploreListLive.observe(viewLifecycleOwner) {
+                        val adapter = ExploreAdapter(requireContext(), it, viewModelExplore)
+                        binding.recyclerViewExplore.adapter = adapter
+                        binding.progressBarExplore.visibility = View.GONE
+                        println("else calisti")
+                    }*/
+                }
+
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+
+            }
+
+        }
+
+        viewModelExplore.exploreListLive.observe(viewLifecycleOwner) {
+            val adapter = ExploreAdapter(requireContext(), it, viewModelExplore)
+            binding.recyclerViewExplore.adapter = adapter
+            binding.progressBarExplore.visibility = View.GONE
         }
 
         requireActivity().addMenuProvider(object : MenuProvider{
@@ -63,38 +120,30 @@ class ExploreFragment : Fragment(), SearchView.OnQueryTextListener {
 
         },viewLifecycleOwner,Lifecycle.State.RESUMED)
 
-        binding.recyclerViewExplore.layoutManager = LinearLayoutManager(requireContext())
-        binding.recyclerViewExplore.setHasFixedSize(true)
 
-        val exploreList = ArrayList<Explore>()
-        val e1 = Explore("1","başlık1", "detay1 kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk", "3.5", "Sakarya-Turkey")
-        val e2 = Explore("2","başlık2", "detay2", "4.5", "Istanbul-Turkey")
-        val e3 = Explore("3","başlık3", "detay3", "2.0", "Ankara-Turkey")
-        val e4 = Explore("4","başlık4", "detay4", "5.0", "İzmir-Turkey")
-        exploreList.add(e1)
-        exploreList.add(e2)
-        exploreList.add(e3)
-        exploreList.add(e4)
 
-        val adapter = ExploreAdapter(requireContext(),exploreList)
-        binding.recyclerViewExplore.adapter = adapter
+
+        /*viewModelExplore.exploreListLive.observe(viewLifecycleOwner){
+            val adapter = ExploreAdapter(requireContext(),it,viewModelExplore)
+            binding.recyclerViewExplore.adapter = adapter
+            binding.progressBarExplore.visibility = View.GONE
+        }*/
+
+
     }
 
     override fun onQueryTextSubmit(query: String): Boolean {
-        search(query)
+        viewModelExplore.searchViewModel(query)
         return true
     }
 
     override fun onQueryTextChange(newText: String): Boolean {
-        search(newText)
+        viewModelExplore.searchViewModel(newText)
         return true
     }
 
-    fun search(searchingWord:String){
-
-    }
-
-    override fun onResume() {
+    /*override fun onResume() {
         super.onResume()
-    }
+        viewModelExplore.getExploreViewModel()
+    }*/
 }

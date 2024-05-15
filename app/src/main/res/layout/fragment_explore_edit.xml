@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.ExploreCreateFragment">
+    tools:context=".View.ExploreEditFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -15,17 +15,19 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/ivExploreCreateImage"
+                android:id="@+id/ivExploreEditImage"
                 android:layout_width="200dp"
                 android:layout_height="150dp"
-                android:layout_marginStart="32dp"
+                android:layout_marginStart="60dp"
                 android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
                 android:src="@drawable/image_not_found"
+                app:layout_constraintEnd_toStartOf="@+id/btnExploreEditImg"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputExploreCreateTitle"
+                android:id="@+id/textInputExploreEditTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -40,14 +42,14 @@
                 app:layout_constraintTop_toBottomOf="@+id/ivExploreEditImage">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etExploreCreateTitle"
+                    android:id="@+id/etExploreEditTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/exploreCreateTitle" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputExploreCreateCountry"
+                android:id="@+id/textInputExploreEditCountry"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -59,17 +61,17 @@
                 app:boxCornerRadiusTopStart="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textInputExploreCreateTitle">
+                app:layout_constraintTop_toBottomOf="@+id/textInputExploreEditTitle">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etExploreCreateCountry"
+                    android:id="@+id/etExploreEditCountry"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/exploreCreateCountry" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputExploreCreatePlace"
+                android:id="@+id/textInputExploreEditPlace"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -81,17 +83,17 @@
                 app:boxCornerRadiusTopStart="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textInputExploreCreateCountry">
+                app:layout_constraintTop_toBottomOf="@+id/textInputExploreEditCountry">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etExploreCreatePlace"
+                    android:id="@+id/etExploreEditPlace"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/exploreCreatePlace" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputExploreCreateTxt"
+                android:id="@+id/textInputExploreEditTxt"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -103,10 +105,10 @@
                 app:boxCornerRadiusTopStart="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/spinnerExploreCreate">
+                app:layout_constraintTop_toBottomOf="@+id/spinnerExploreEdit">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etExploreCreateTxt"
+                    android:id="@+id/etExploreEditTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="top"
@@ -116,7 +118,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <RatingBar
-                android:id="@+id/exploreCreateRatingBar"
+                android:id="@+id/exploreEditRatingBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -126,10 +128,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textInputExploreCreateTxt" />
+                app:layout_constraintTop_toBottomOf="@+id/textInputExploreEditTxt" />
 
             <TextView
-                android:id="@+id/tvExploreCreateRatingBarMessage"
+                android:id="@+id/tvExploreEditRatingBarMessage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/exploreCreateRatingBarMessage"
@@ -137,10 +139,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/exploreCreateRatingBar" />
+                app:layout_constraintTop_toBottomOf="@+id/exploreEditRatingBar" />
 
             <Button
-                android:id="@+id/btnExploreCreateSave"
+                android:id="@+id/btnExploreEditSave"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -150,21 +152,22 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvExploreCreateRatingBarMessage" />
+                app:layout_constraintTop_toBottomOf="@+id/tvExploreEditRatingBarMessage" />
 
             <Button
-                android:id="@+id/btnExploreCreateImg"
+                android:id="@+id/btnExploreEditImg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginEnd="64dp"
                 android:backgroundTint="#888888"
                 android:text="@string/ProfileChooseImg"
-                app:layout_constraintBottom_toBottomOf="@+id/ivExploreCreateImage"
-                app:layout_constraintStart_toEndOf="@+id/ivExploreCreateImage"
-                app:layout_constraintTop_toTopOf="@+id/ivExploreCreateImage" />
+                app:layout_constraintBottom_toBottomOf="@+id/ivExploreEditImage"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivExploreEditImage"
+                app:layout_constraintTop_toTopOf="@+id/ivExploreEditImage" />
 
             <Spinner
-                android:id="@+id/spinnerExploreCreate"
+                android:id="@+id/spinnerExploreEdit"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="32dp"
@@ -172,9 +175,7 @@
                 android:layout_marginEnd="32dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textInputExploreCreatePlace" />
+                app:layout_constraintTop_toBottomOf="@+id/textInputExploreEditPlace" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
