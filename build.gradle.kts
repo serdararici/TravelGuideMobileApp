@@ -8,6 +8,8 @@ plugins {
 buildscript {
     repositories {
         google()
+        mavenCentral()
+        maven { url = uri("https://jitpack.io") }
     }
     dependencies {
         classpath("com.google.gms:google-services:4.4.1")
@@ -16,3 +18,4 @@ buildscript {
         classpath("com.google.android.libraries.mapsplatform.secrets-gradle-plugin:secrets-gradle-plugin:2.0.1")
     }
 }
+

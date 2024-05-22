@@ -3,6 +3,7 @@ package com.serdararici.travelguide.Adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.serdararici.travelguide.Model.Explore
@@ -39,6 +40,12 @@ class ExploreAdapter (var mContext: Context,
         var explorePlaceName = "${explore.explorePlace} - ${explore.exploreCountry}"
         holder.binding.tvExplorePlaceName.text = explorePlaceName
         holder.binding.ratingBar.rating = explore.exploreRatingNumber!!.toFloat()
+        holder.binding.tvExploreUserName.text = explore.userEmail
+        viewModel.getProfileFromExploreViewModel(explore.userEmail!!)
+        holder.binding.tvExploreUserName.setOnClickListener {
+            val action = ExploreFragmentDirections.actionExploreFragmentToProfileDetailsFragment(explore)
+            Navigation.findNavController(it).navigate(action)
+        }
 
         val imageView = holder.binding.iVExploreImage
         Picasso.get()
@@ -46,7 +53,7 @@ class ExploreAdapter (var mContext: Context,
             .into(imageView)
 
         holder.binding.exploreCardView.setOnClickListener {
-            val action = ExploreFragmentDirections.actionExploreFragmentToExploreDetailsFragment(explore)
+            val action = ExploreFragmentDirections.actionExploreFragmentToExploreDetailsFragment(explore,explore)
             Navigation.findNavController(it).navigate(action)
         }
     }

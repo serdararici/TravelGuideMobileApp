@@ -1,0 +1,209 @@
+<resources>
+    <string name="app_name" translatable="false">Travel Guide</string>
+    <string name="google_map_api_key" translatable="false">AIzaSyBQEro1UFVzDJ2oJ-v_F6IUNy_86f2DccE</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hallo leeres Fragment</string>
+    <string name="home">Startseite</string>
+    <string name="explore">Erkunden</string>
+    <string name="map">Karte</string>
+    <string name="countries">Länder</string>
+    <string name="chatBot">ChatBot</string>
+    <string name="profile">Profil</string>
+    <string name="settings">Einstellungen</string>
+    <string name="signOut">Abmelden</string>
+    <string name="nav_open">Öffnen</string>
+    <string name="nav_close">Schließen</string>
+    <string name="set">Setzen</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="close">Schließen</string>
+    <string name="save">Speichern</string>
+    <string name="send">Senden</string>
+    <string name="yes">JA</string>
+    <string name="no">NEIN</string>
+    <string name="result">Ergebnis:</string>
+    <string name="date_format">TT/MM/JJJJ</string>
+    <string name="drawerText">Die Welt erkunden.</string>
+    <string name="choose_time">Zeit wählen</string>
+    <string name="choose_date">Datum wählen</string>
+    <string name="edit">Bearbeiten</string>
+    <string name="delete">Löschen</string>
+
+    <!-- MapFragment -->
+    <string name="menu">Menü</string>
+    <string name="location">Ort</string>
+    <string name="normal_map">Normale Karte</string>
+    <string name="hybrid_map">Hybridkarte</string>
+    <string name="satellite_map">Satellitenkarte</string>
+    <string name="terrain_map">Geländekarte</string>
+    <string name="zoomIn">Vergrößern</string>
+    <string name="zoomOut">Verkleinern</string>
+    <string name="locationRequestGranted">Standortberechtigung erteilt.</string>
+    <string name="locationRequestDenied">Standortberechtigung verweigert.</string>
+    <string name="yourLocation">Ihr Standort</string>
+    <string name="locationPermissionMessage">Sie benötigen eine Standortberechtigung, um Ihren Standort zu finden.</string>
+    <string name="locationDeniedMessage">Standortberechtigung verweigert. Bitte aktivieren Sie diese in den Einstellungen.</string>
+    <string name="selectedPlaceErrorMessage">Der ausgewählte Ort hat keinen Namen oder keine Position!</string>
+    <string name="mapLongClickMessage">Klicken Sie auf das Symbol, um es zu entfernen.</string>
+    <string name="mapMarkerClickMessage">Möchten Sie dieses Symbol entfernen?</string>
+    <string name="streetView">Straßenansicht</string>
+    <string name="streetViewMessage">Tippen Sie auf die Karte, um einen Ort für die Straßenansicht auszuwählen.</string>
+    <string name="restaurants">Restaurants</string>
+    <string name="nearRestaurants">Restaurants in der Nähe.</string>
+    <string name="restaurantNotFound">Keine Restaurants in der Nähe gefunden.</string>
+    <string name="hospitals">Krankenhäuser</string>
+    <string name="nearHospitals">Krankenhäuser in der Nähe.</string>
+    <string name="hospitalNotFound">Keine Krankenhäuser in der Nähe gefunden.</string>
+    <string name="cafes">Cafés</string>
+    <string name="nearCafes">Cafés in der Nähe.</string>
+    <string name="cafeNotFound">Keine Cafés in der Nähe gefunden.</string>
+    <string name="hotels">Hotels</string>
+    <string name="nearHotels">Hotels in der Nähe.</string>
+    <string name="hotelNotFound">Keine Hotels in der Nähe gefunden.</string>
+
+    <!-- Country Fragment -->
+    <string name="country">Land</string>
+    <string name="capital">Hauptstadt: </string>
+    <string name="language">Sprache: </string>
+    <string name="region">Region: </string>
+    <string name="population">Bevölkerung: </string>
+    <string name="area">Fläche: </string>
+    <string name="currency">Währung: </string>
+    <string name="showOnGoogleMaps">Auf Google Maps anzeigen</string>
+    <string name="selectCountry">Bitte wählen Sie ein Land aus.</string>
+    <string name="noInternet">Überprüfen Sie Ihre Internetverbindung.</string>
+    <string name="overview">Übersicht</string>
+    <string name="mustSeePlaces">Sehenswürdigkeiten</string>
+    <string name="foodCulture">Esskultur</string>
+    <string name="artandHistory">Kunst und Geschichte</string>
+    <string name="events">Besondere Tage und Veranstaltungen</string>
+    <string name="transportation">Transport</string>
+    <string name="climate">Klima und Wetter</string>
+    <string name="naturalPlaces">Natur und Naturschönheiten</string>
+    <string name="accommodation">Unterkunft</string>
+    <string name="nightLife">Unterhaltung und Nachtleben</string>
+    <string name="healthandSecurity">Gesundheit und Sicherheit</string>
+    <string name="practicalInfo">Praktische Informationen</string>
+
+    <!-- CountryGeminiResponse Fragment -->
+    <string name="pleaseWait">Bitte warten.</string>
+    <string name="noContentWarning">Inhalt konnte nicht geladen werden, bitte versuchen Sie es erneut.</string>
+    <string name="loading">Wird geladen...</string>
+    <string name="forCountry">für das Land</string>
+    <string name="getInfoAbout">Können Sie Informationen zu geben?</string>
+
+    <!-- ChatBot Fragment -->
+    <string name="chatBotMessage">Wie kann ich Ihnen helfen?</string>
+
+    <!-- SignIn -->
+    <string name="signIn">Anmelden</string>
+    <string name="signInBigLetter">ANMELDEN</string>
+    <string name="putPaswordSignIn">Geben Sie Ihr Passwort ein</string>
+    <string name="forgetPassword">Passwort vergessen</string>
+    <string name="dontHaveAccount">Sie haben kein Konto? Registrieren Sie sich</string>
+    <string name="welcome">Willkommen: </string>
+    <string name="signInFailed">Anmeldung fehlgeschlagen! - E-Mail oder Passwort ist falsch. Bitte versuchen Sie es erneut.</string>
+
+    <!-- SignUp -->
+    <string name="signUp">Registrieren</string>
+    <string name="signUpBigLetter">REGISTRIEREN</string>
+    <string name="putNameSurname">Geben Sie Ihren Namen und Nachnamen ein</string>
+    <string name="birthDateSignUp">Geben Sie Ihr Geburtsdatum ein (TT/MM/JJJJ)</string>
+    <string name="alreadyHaveAccount">Haben Sie bereits ein Konto? Anmelden</string>
+    <string name="putEmail">Geben Sie Ihre E-Mail-Adresse ein</string>
+    <string name="putPasword">Geben Sie Ihr Passwort ein (mindestens 6 Zeichen)</string>
+    <string name="putPasswordAgain">Geben Sie Ihr Passwort erneut ein</string>
+    <string name="requiredUserName">Das Namensfeld darf nicht leer sein!</string>
+    <string name="requiredBirtDate">Das Geburtsdatumfeld darf nicht leer sein!</string>
+    <string name="requiredPassword">Das Passwortfeld darf nicht leer sein!</string>
+    <string name="passwordLength">Das Passwort muss mindestens 6 Zeichen lang sein!</string>
+    <string name="requiredPasswordAgain">Das Bestätigungsfeld für das Passwort darf nicht leer sein!</string>
+    <string name="registrationSuccess">Registrierung erfolgreich!</string>
+    <string name="registrationFailed">Registrierung fehlgeschlagen!</string>
+    <string name="passwordCheck">Warnung: Die eingegebenen Passwörter stimmen nicht überein!</string>
+
+    <!-- SignOut -->
+    <string name="signingOut">Abmeldung läuft...</string>
+    <string name="signedOut">Sie haben sich von Ihrem Konto abgemeldet.</string>
+
+    <!-- ForgetPassword -->
+    <string name="email">E-Mail</string>
+    <string name="requiredEmail">Das E-Mail-Feld darf nicht leer sein!</string>
+    <string name="checkEmailFormat">Bitte geben Sie eine gültige E-Mail-Adresse ein!</string>
+    <string name="checkYourEmail">Überprüfen Sie Ihre E-Mails, um ein neues Passwort zu erstellen</string>
+    <string name="infoForgetPasword">Sie können Ihr Passwort mit der E-Mail ändern, die an die von Ihnen eingegebene E-Mail-Adresse gesendet wird.</string>
+    <string name="forgetPasswordMessage">Passwort vergessen? Kein Problem! Bitte geben Sie die E-Mail-Adresse Ihres Kontos ein.</string>
+
+    <!-- Explore -->
+    <!-- ExploreCreate -->
+    <string name="exploreCreateTitle">Titel</string>
+    <string name="exploreCreateCountry">Land</string>
+    <string name="exploreCreatePlace">Geben Sie eine Stadt oder den Ortsnamen ein</string>
+    <string name="exploreCreateTxt">Was möchten Sie teilen?</string>
+    <string name="exploreCreateRatingBarMessage">Würden Sie diesen Ort empfehlen?</string>
+    <string name="exploreCreateChooseImage">Foto hinzufügen</string>
+    <string name="exploreTitleRequired">Das Titelfeld darf nicht leer sein</string>
+    <string name="exploreCountryRequired">Das Länderfeld darf nicht leer sein</string>
+    <string name="explorePlaceRequired">Das Ortsfeld darf nicht leer sein</string>
+    <string name="exploreDetailsRequired">Das Detailfeld darf nicht leer sein</string>
+    <string name="exploreCreateMessage">Beitrag erfolgreich gespeichert.</string>
+    <string name="category">Kategorie</string>
+    <string name="category1">Kategorie:</string>
+    <string name="all">Alle</string>
+    <string name="history">Geschichte und Kultur</string>
+    <string name="transportationAndAccommodation">Transport und Unterkunft</string>
+    <string name="food">Essen</string>
+    <string name="natureAndAdvanture">Natur und Abenteuer</string>
+    <string name="Entertainment">Unterhaltung</string>
+    <string name="ExpreinceAndSuggestion">Erfahrung und Vorschlag</string>
+    <string-array name="category_array">
+        <item>Alle</item>
+        <item>Geschichte und Kultur</item>
+        <item>Transport und Unterkunft</item>
+        <item>Essen</item>
+        <item>Natur und Abenteuer</item>
+        <item>Unterhaltung</item>
+        <item>Erfahrung und Vorschlag</item>
+    </string-array>
+
+    <!-- ExploreEdit -->
+    <string name="exploreUpdateMessage">Beitrag erfolgreich aktualisiert.</string>
+
+    <!-- ExploreDetails -->
+    <string name="visitDate">Besuchsdatum: </string>
+    <string name="exploreDetailsCreatedDate">erstellt am.</string>
+
+    <!-- Profile -->
+    <string name="profilePost">Beiträge</string>
+    <string name="profileAge">Alter</string>
+    <string name="btnProfileToProfileEdit">Profil bearbeiten</string>
+    <string name="profileJoined">beitrat am</string>
+    <string name="isDelete">löschen?</string>
+
+    <!-- ProfileEdit -->
+    <string name="ProfileChooseImg">Foto auswählen</string>
+    <string name="ProfileNameAndSurname">Name und Nachname</string>
+    <string name="ProfileBirthDate">Geburtsdatum</string>
+    <string name="profileEditBio">Biografie</string>
+    <string name="profileUpdated">Profil aktualisiert</string>
+    <string name="maxCharacter">(Maximal 200 Zeichen)</string>
+
+    <!-- ChangePassword -->
+    <string name="changePassword">Passwort ändern</string>
+    <string name="changePasswordMessage">Sind Sie sicher, dass Sie Ihr Passwort ändern möchten? Bitte geben Sie die mit Ihrem Konto verknüpfte E-Mail-Adresse ein.</string>
+
+    <!-- Settings -->
+    <string name="languageSettings">Sprache:</string>
+    <string name="english">Englisch</string>
+    <string name="turkish">Türkisch</string>
+    <string name="spanish">Spanisch</string>
+    <string name="french">Französisch</string>
+    <string name="german">Deutsch</string>
+    <string name="applyChanges">Änderungen übernehmen</string>
+
+    <!-- MainFragment -->
+    <string name="goodDays">Gute Tage, </string>
+    <string name="recentlyAdded">Kürzlich Hinzugefügt</string>
+    <string name="seeAll">Alle Ansehen</string>
+
+
+</resources>

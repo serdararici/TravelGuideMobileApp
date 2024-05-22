@@ -1,182 +1,210 @@
 <resources>
-    <string name="app_name" translatable="false">TravelGuide</string>
+    <string name="app_name" translatable="false">Travel Guide</string>
     <string name="google_map_api_key" translatable="false">AIzaSyBQEro1UFVzDJ2oJ-v_F6IUNy_86f2DccE</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="home">Anasayfa</string>
-    <string name="explore">Keşfet</string>
-    <string name="map">Harita</string>
-    <string name="countries">Ülkeler</string>
+    <string name="home">Home</string>
+    <string name="explore">Explore</string>
+    <string name="map">Map</string>
+    <string name="countries">Countries</string>
     <string name="chatBot">ChatBot</string>
-    <string name="profile">Profil</string>
-    <string name="settings">Ayarlar</string>
-    <string name="signOut">Çıkış Yap</string>
-    <string name="nav_open">Açık</string>
-    <string name="nav_close">Kapalı</string>
-    <string name="set">Ayarla</string>
-    <string name="cancel">İptal</string>
-    <string name="close">Kapat</string>
-    <string name="save">Kaydet</string>
-    <string name="send">Gönder</string>
-    <string name="yes">EVET</string>
-    <string name="no">HAYIR</string>
-    <string name="result">Sonuç:</string>
-    <string name="date_format">GG/AA/YYYY</string>
-    <string name="drawerText">Dünyayı Keşfet.</string>
-    <string name="choose_time">Saat Seçiniz</string>
-    <string name="choose_date">Tarih Seçiniz</string>
-    <string name="edit">Düzenle</string>
-    <string name="delete">Sil</string>
+    <string name="profile">Profile</string>
+    <string name="settings">Settings</string>
+    <string name="signOut">Sign Out</string>
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+    <string name="set">Set</string>
+    <string name="cancel">Cancel</string>
+    <string name="close">Close</string>
+    <string name="save">Save</string>
+    <string name="send">Send</string>
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
+    <string name="result">Result:</string>
+    <string name="date_format">DD/MM/YYYY</string>
+    <string name="drawerText">Explore the World.</string>
+    <string name="choose_time">Choose Time</string>
+    <string name="choose_date">Choose Date</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
 
-    //MapFragment
-    <string name="menu">Menü</string>
-    <string name="location">Konum</string>
-    <string name="normal_map">Normal Harita</string>
-    <string name="hybrid_map">Hibrit Harita</string>
-    <string name="satellite_map">Uydu Haritası</string>
-    <string name="terrain_map">Arazi Haritası</string>
-    <string name="zoomIn">Yaklaştır</string>
-    <string name="zoomOut">Uzaklaştır</string>
-    <string name="locationRequestGranted">Konum izni verildi.</string>
-    <string name="locationRequestDenied">Konum izni reddedildi.</string>
-    <string name="yourLocation">Konumunuz</string>
-    <string name="locationPermissionMessage">Konumunuzu bulmak için konum iznine ihtiyacınız var.</string>
-    <string name="locationDeniedMessage">Konum izni reddedildi. Lütfen ayarlardan etkinleştirin.</string>
-    <string name="selectedPlaceErrorMessage">Seçilen yerin adı veya konumu yok!</string>
-    <string name="mapLongClickMessage">İşareti kaldırmak için üzerine tıklayın.</string>
-    <string name="mapMarkerClickMessage">Bu işareti kaldırmak istiyor musunuz?</string>
-    <string name="streetView">Sokak Görüntüsü</string>
-    <string name="streetViewMessage">Sokak Görüntüsü için haritada bir yere dokunarak seçim yapın.</string>
-    <string name="restaurants">Restaurantlar</string>
-    <string name="nearRestaurants">Yakınınızdaki Restaurantlar.</string>
-    <string name="restaurantNotFound">Yakınınızda Restaurant Bulunamadı.</string>
-    <string name="hospitals">Hastaneler</string>
-    <string name="nearHospitals">Yakınınızdaki Hastaneler.</string>
-    <string name="hospitalNotFound">Yakınınızda Hastane Bulunamadı.</string>
-    <string name="cafes">Kafeler</string>
-    <string name="nearCafes">Yakınınızdaki Kafeler.</string>
-    <string name="cafeNotFound">Yakınınızda Kafe Bulunamadı.</string>
-    <string name="hotels">Oteller</string>
-    <string name="nearHotels">Yakınınızdaki Oteller.</string>
-    <string name="hotelNotFound">Yakınınızda Otel Bulunamadı.</string>
+    <!-- MapFragment -->
+    <string name="menu">Menu</string>
+    <string name="location">Location</string>
+    <string name="normal_map">Normal Map</string>
+    <string name="hybrid_map">Hybrid Map</string>
+    <string name="satellite_map">Satellite Map</string>
+    <string name="terrain_map">Terrain Map</string>
+    <string name="zoomIn">Zoom In</string>
+    <string name="zoomOut">Zoom Out</string>
+    <string name="locationRequestGranted">Location permission granted.</string>
+    <string name="locationRequestDenied">Location permission denied.</string>
+    <string name="yourLocation">Your Location</string>
+    <string name="locationPermissionMessage">You need location permission to find your location.</string>
+    <string name="locationDeniedMessage">Location permission denied. Please enable it from settings.</string>
+    <string name="selectedPlaceErrorMessage">The selected place has no name or location!</string>
+    <string name="mapLongClickMessage">Click on the marker to remove it.</string>
+    <string name="mapMarkerClickMessage">Do you want to remove this marker?</string>
+    <string name="streetView">Street View</string>
+    <string name="streetViewMessage">Tap on the map to select a place for Street View.</string>
+    <string name="restaurants">Restaurants</string>
+    <string name="nearRestaurants">Nearby Restaurants.</string>
+    <string name="restaurantNotFound">No Restaurants Found Nearby.</string>
+    <string name="hospitals">Hospitals</string>
+    <string name="nearHospitals">Nearby Hospitals.</string>
+    <string name="hospitalNotFound">No Hospitals Found Nearby.</string>
+    <string name="cafes">Cafes</string>
+    <string name="nearCafes">Nearby Cafes.</string>
+    <string name="cafeNotFound">No Cafes Found Nearby.</string>
+    <string name="hotels">Hotels</string>
+    <string name="nearHotels">Nearby Hotels.</string>
+    <string name="hotelNotFound">No Hotels Found Nearby.</string>
 
-    //Country Fragment
-    <string name="country">Ülke</string>
-    <string name="capital">Başkent: </string>
-    <string name="language">Dil: </string>
-    <string name="region">Bölge: </string>
-    <string name="population">Nüfus: </string>
-    <string name="area">Alan: </string>
-    <string name="currency">Para Birimi: </string>
-    <string name="showOnGoogleMaps">Google haritalarda göster</string>
-    <string name="selectCountry">Bir ülke seçimi yapınız.</string>
-    <string name="noInternet">İnternet bağlantınızı kontrol ediniz.</string>
-    <string name="overview">Genel Bakış</string>
-    <string name="mustSeePlaces">Görülmesi Gereken Yerler</string>
-    <string name="foodCulture">Yemek Kültürü</string>
-    <string name="artandHistory">Sanat ve Tarih</string>
-    <string name="events">Özel Günler ve Etkinlikler</string>
-    <string name="transportation">Ulaşım</string>
-    <string name="climate">İklim ve Hava Durumu</string>
-    <string name="naturalPlaces">Tabiat ve Doğal Güzellikler</string>
-    <string name="accommodation">Konaklama</string>
-    <string name="nightLife">Eğlence ve Gece Hayatı</string>
-    <string name="healthandSecurity">Güvenlik ve Sağlık</string>
-    <string name="practicalInfo">Pratik Bilgiler</string>
+    <!-- Country Fragment -->
+    <string name="country">Country</string>
+    <string name="capital">Capital: </string>
+    <string name="language">Language: </string>
+    <string name="region">Region: </string>
+    <string name="population">Population: </string>
+    <string name="area">Area: </string>
+    <string name="currency">Currency: </string>
+    <string name="showOnGoogleMaps">Show on Google Maps</string>
+    <string name="selectCountry">Please select a country.</string>
+    <string name="noInternet">Check your internet connection.</string>
+    <string name="overview">Overview</string>
+    <string name="mustSeePlaces">Must See Places</string>
+    <string name="foodCulture">Food Culture</string>
+    <string name="artandHistory">Art and History</string>
+    <string name="events">Special Days and Events</string>
+    <string name="transportation">Transportation</string>
+    <string name="climate">Climate and Weather</string>
+    <string name="naturalPlaces">Nature and Natural Beauties</string>
+    <string name="accommodation">Accommodation</string>
+    <string name="nightLife">Entertainment and Night Life</string>
+    <string name="healthandSecurity">Health and Security</string>
+    <string name="practicalInfo">Practical Information</string>
 
-    //CountryGeminiResponse Fragment
-    <string name="pleaseWait">Lütfen Bekleyiniz.</string>
-    <string name="noContentWarning">İçerik yüklenemedi, lütfen tekrar deneyiniz.</string>
-    <string name="loading">Yükleniyor...</string>
-    <string name="forCountry">ülkesi için</string>
-    <string name="getInfoAbout">hakkında bilgi verebilir misin?</string>
-    //ChatBot Fragment
-    <string name="chatBotMessage">Nasıl yardımcı olabilirim?</string>
+    <!-- CountryGeminiResponse Fragment -->
+    <string name="pleaseWait">Please Wait.</string>
+    <string name="noContentWarning">Content could not be loaded, please try again.</string>
+    <string name="loading">Loading...</string>
+    <string name="forCountry">for the country</string>
+    <string name="getInfoAbout">can you give information about?</string>
 
-    //SignIn
-    <string name="signIn">Giriş Yap</string>
-    <string name="signInBigLetter">GİRİŞ YAP</string>
-    <string name="putPaswordSignIn">Şifrenizi giriniz</string>
-    <string name="forgetPassword">Şifremi Unuttum</string>
-    <string name="dontHaveAccount">Hesabın yok mu? Kayıt Ol</string>
-    <string name="welcome">Hoşgeldin: </string>
-    <string name="signInFailed">Giriş başarısız! - Email veya şifre yanlış. Tekrar deneyiniz.</string>
-    //SignUp
-    <string name="signUp">Kayıt Ol</string>
-    <string name="signUpBigLetter">KAYIT OL</string>
-    <string name="putNameSurname">İsim ve Soyisim giriniz</string>
-    <string name="birthDateSignUp">Doğum tarihinizi giriniz(GG/AA/YYYY) </string>
-    <string name="alreadyHaveAccount">Zaten bir hesabınız var mı? Giriş Yap</string>
-    <string name="putEmail">Email adresinizi giriniz</string>
-    <string name="putPasword">Şifrenizi giriniz (en az 6 karakter)</string>
-    <string name="putPasswordAgain">Şifrenizi tekrar giriniz</string>
-    <string name="requiredUserName">İsim alanı boş geçilemez!</string>
-    <string name="requiredBirtDate">Doğum tarihi alanı boş geçilemez!</string>
-    <string name="requiredPassword">Şifre alanı boş geçilemez!</string>
-    <string name="passwordLength">Şifre en az 6 karakterden oluşmalıdır!</string>
-    <string name="requiredPasswordAgain">Şifre tekrar alanı boş geçilemez!</string>
-    <string name="registrationSuccess">Kayıt Başarılı!</string>
-    <string name="registrationFailed">Kayıt Başarısız!</string>
-    <string name="passwordCheck">Uyarı: Girilen şifreler eşleşmiyor!</string>
-    //SignOut
-    <string name="signingOut">Çıkış yapılıyor...</string>
-    <string name="signedOut">hesabından çıkış yapıldı.</string>
-    //ForgetPassword
+    <!-- ChatBot Fragment -->
+    <string name="chatBotMessage">How can I help you?</string>
+
+    <!-- SignIn -->
+    <string name="signIn">Sign In</string>
+    <string name="signInBigLetter">SIGN IN</string>
+    <string name="putPaswordSignIn">Enter your password</string>
+    <string name="forgetPassword">Forgot Password</string>
+    <string name="dontHaveAccount">Dont have an account? Sign Up</string>
+    <string name="welcome">Welcome: </string>
+    <string name="signInFailed">Sign in failed! - Email or password is incorrect. Please try again.</string>
+
+    <!-- SignUp -->
+    <string name="signUp">Sign Up</string>
+    <string name="signUpBigLetter">SIGN UP</string>
+    <string name="putNameSurname">Enter your name and surname</string>
+    <string name="birthDateSignUp">Enter your birthdate (DD/MM/YYYY)</string>
+    <string name="alreadyHaveAccount">Already have an account? Sign In</string>
+    <string name="putEmail">Enter your email address</string>
+    <string name="putPasword">Enter your password (at least 6 characters)</string>
+    <string name="putPasswordAgain">Re-enter your password</string>
+    <string name="requiredUserName">Name field cannot be empty!</string>
+    <string name="requiredBirtDate">Birthdate field cannot be empty!</string>
+    <string name="requiredPassword">Password field cannot be empty!</string>
+    <string name="passwordLength">Password must be at least 6 characters!</string>
+    <string name="requiredPasswordAgain">Password confirmation field cannot be empty!</string>
+    <string name="registrationSuccess">Registration Successful!</string>
+    <string name="registrationFailed">Registration Failed!</string>
+    <string name="passwordCheck">Warning: Entered passwords do not match!</string>
+
+    <!-- SignOut -->
+    <string name="signingOut">Signing out...</string>
+    <string name="signedOut">signed out of your account.</string>
+
+    <!-- ForgetPassword -->
     <string name="email">Email</string>
-    <string name="requiredEmail">Email alanı boş geçilemez!</string>
-    <string name="checkEmailFormat">Geçerli bir email adresi giriniz!</string>
-    <string name="checkYourEmail">Yeni Şifre oluşturmak için email kutunu kontrol et</string>
-    <string name="infoForgetPasword">Girdiğiniz email adresine gelecek olan mail ile şifrenizi değiştirebilirsiniz.</string>
-    <string name="forgetPasswordMessage">Şifrenizi mi unuttunuz? Endişelenmeyin! Lütfen hesabınızla ilişkili e-posta adresini girin. </string>
-    //Explore
-    //ExploreCreate
-    <string name="exploreCreateTitle">Başlık</string>
-    <string name="exploreCreateCountry">Ülke Adı</string>
-    <string name="exploreCreatePlace">Şehir veya bir mekan adı giriniz</string>
-    <string name="exploreCreateTxt">Ne paylaşmak istersiniz?</string>
-    <string name="exploreCreateRatingBarMessage">Bu mekanı tavsiye eder misiniz?</string>
-    <string name="exploreCreateChooseImage">Fotoğraf Ekle</string>
-    <string name="exploreTitleRequired">Başlık alanı boş bırakılamaz</string>
-    <string name="exploreCountryRequired">Ülke alanı boş bırakılamaz</string>
-    <string name="explorePlaceRequired">Mekan alanı boş bırakılamaz</string>
-    <string name="exploreDetailsRequired">Detay alanı boş bırakılamaz</string>
-    <string name="exploreCreateMessage">Gönderi başarıyla kaydedildi.</string>
-    <string name="category">Kategori</string>
-    <string name="category1">Kategori:</string>
-    <string name="all">Hepsi</string>
-    <string name="history">Tarih ve Kültür</string>
-    <string name="transportationAndAccommodation">Ulaşım ve Konaklama</string>
-    <string name="food">Yemek</string>
-    <string name="natureAndAdvanture">Doğa ve Macera</string>
-    <string name="Entertainment">Eğlence</string>
-    <string name="ExpreinceAndSuggestion">Deneyim ve Tavsiye</string>
+    <string name="requiredEmail">Email field cannot be empty!</string>
+    <string name="checkEmailFormat">Please enter a valid email address!</string>
+    <string name="checkYourEmail">Check your email to create a new password</string>
+    <string name="infoForgetPasword">You can change your password with the email that will be sent to the email address you entered.</string>
+    <string name="forgetPasswordMessage">Forgot your password? Dont worry! Please enter the email address associated with your account.</string>
+
+    <!-- Explore -->
+    <!-- ExploreCreate -->
+    <string name="exploreCreateTitle">Title</string>
+    <string name="exploreCreateCountry">Country Name</string>
+    <string name="exploreCreatePlace">Enter a city or place name</string>
+    <string name="exploreCreateTxt">What would you like to share?</string>
+    <string name="exploreCreateRatingBarMessage">Would you recommend this place?</string>
+    <string name="exploreCreateChooseImage">Add Photo</string>
+    <string name="exploreTitleRequired">Title field cannot be empty</string>
+    <string name="exploreCountryRequired">Country field cannot be empty</string>
+    <string name="explorePlaceRequired">Place field cannot be empty</string>
+    <string name="exploreDetailsRequired">Details field cannot be empty</string>
+    <string name="exploreCreateMessage">Post successfully saved.</string>
+    <string name="category">Category</string>
+    <string name="category1">Category:</string>
+    <string name="all">All</string>
+    <string name="history">History and Culture</string>
+    <string name="transportationAndAccommodation">Transportation and Accommodation</string>
+    <string name="food">Food</string>
+    <string name="natureAndAdvanture">Nature and Adventure</string>
+    <string name="Entertainment">Entertainment</string>
+    <string name="ExpreinceAndSuggestion">Experience and Suggestion</string>
     <string-array name="category_array">
-        <item>Hepsi</item>
-        <item>Tarih ve Kültür</item>
-        <item>Ulaşım ve Konaklama</item>
-        <item>Yemek</item>
-        <item>Doğa ve Macera</item>
-        <item>Eğlence</item>
-        <item>Deneyim ve Tavsiye</item>
+        <item>All</item>
+        <item>History and Culture</item>
+        <item>Transportation and Accommodation</item>
+        <item>Food</item>
+        <item>Nature and Adventure</item>
+        <item>Entertainment</item>
+        <item>Experience and Suggestion</item>
     </string-array>
 
-    //ExploreEdit
-    <string name="exploreUpdateMessage">Gönderi başarıyla güncellendi.</string>
-    //ExploreDetails
-    <string name="visitDate">Ziyaret Tarihi: </string>
-    <string name="exploreDetailsCreatedDate">tarihinde oluşturuldu.</string>
-    //Profile
-    <string name="profilePost">gönderi</string>
-    <string name="profileAge">yaş</string>
-    <string name="btnProfileToProfileEdit">Profil düzenle</string>
-    <string name="profileJoined">tarihinde katıldı</string>
-    <string name="isDelete">silinsin mi?</string>
-    //ProfileEdit
-    <string name="ProfileChooseImg">Fotoğraf Seç</string>
-    <string name="ProfileNameAndSurname">İsim ve Soyisim</string>
-    <string name="ProfileBirthDate">Doğum Tarihi</string>
+    <!-- ExploreEdit -->
+    <string name="exploreUpdateMessage">Post successfully updated.</string>
+
+    <!-- ExploreDetails -->
+    <string name="visitDate">Visit Date: </string>
+    <string name="exploreDetailsCreatedDate">created on.</string>
+
+    <!-- Profile -->
+    <string name="profilePost">posts</string>
+    <string name="profileAge">age</string>
+    <string name="btnProfileToProfileEdit">Edit profile</string>
+    <string name="profileJoined">joined on</string>
+    <string name="isDelete">delete?</string>
+
+    <!-- ProfileEdit -->
+    <string name="ProfileChooseImg">Choose Photo</string>
+    <string name="ProfileNameAndSurname">Name and Surname</string>
+    <string name="ProfileBirthDate">Birth Date</string>
     <string name="profileEditBio">Bio</string>
-    <string name="profileUpdated">Profil güncellendi</string>
-    <string name="maxCharacter">(Max 200 karakter)</string>
+    <string name="profileUpdated">Profile updated</string>
+    <string name="maxCharacter">(Max 200 characters)</string>
+
+    <!-- Change Password -->
+    <string name="changePassword">Change Password</string>
+    <string name="changePasswordMessage">Are you sure you want to change your password? Please enter the email address associated with your account.</string>
+
+    <!-- Settings -->
+    <string name="languageSettings">Language:</string>
+    <string name="english">English</string>
+    <string name="turkish">Turkish</string>
+    <string name="spanish">Spanish</string>
+    <string name="french">French</string>
+    <string name="german">German</string>
+    <string name="applyChanges">Apply Changes</string>
+
+    <!-- MainFragment -->
+    <string name="goodDays">Good days, </string>
+    <string name="recentlyAdded">Recently Added</string>
+    <string name="seeAll">See All</string>
+
 
 </resources>
+

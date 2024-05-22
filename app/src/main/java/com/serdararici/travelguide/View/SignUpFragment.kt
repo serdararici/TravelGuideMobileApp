@@ -79,7 +79,7 @@ class SignUpFragment : Fragment() {
             if (checkAll()) {
                 viewModel.signUpViewModel(email, password) { success, message ->
                     if(success){
-                        viewModelProfile.profileCreateViewModel(userName,email,birthDate,"",0,"",profileCreateDate)
+                        viewModelProfile.profileCreateViewModel(userName,email,birthDate,"",0,"https://firebasestorage.googleapis.com/v0/b/finalhomework-1140c.appspot.com/o/images%2F-NxZ2L-b3Gm9T4VHyewB?alt=media&token=f5bc8d4b-3450-4c4b-a3ce-885932dcea64",profileCreateDate)
                         Toast.makeText(requireContext(), R.string.registrationSuccess, Toast.LENGTH_LONG).show()
                         val intent = Intent(requireActivity(), MainActivity::class.java)
                         startActivity(intent)

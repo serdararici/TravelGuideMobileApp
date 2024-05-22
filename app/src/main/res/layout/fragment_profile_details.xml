@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".View.ProfileDetailsFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivProfileDetailsImg"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/profile_image"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvProfileDetailsUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="UserName"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/ivProfileDetailsImg"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvProfileDetailsPost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:text="@string/profilePost"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/ivProfileDetailsImg"
+                app:layout_constraintTop_toBottomOf="@+id/tvProfileDetailsPostResult" />
+
+            <TextView
+                android:id="@+id/tvProfileDetailsPostResult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="0"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/tvProfileDetailsPost"
+                app:layout_constraintStart_toStartOf="@+id/tvProfileDetailsPost"
+                app:layout_constraintTop_toBottomOf="@+id/tvProfileDetailsUserName" />
+
+            <TextView
+                android:id="@+id/tvProfileDetailsAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="120dp"
+                android:text="@string/profileAge"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/tvProfileDetailsPost"
+                app:layout_constraintTop_toBottomOf="@+id/tvProfileDetailsAgeResult" />
+
+            <TextView
+                android:id="@+id/tvProfileDetailsAgeResult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="0"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/tvProfileDetailsAge"
+                app:layout_constraintStart_toStartOf="@+id/tvProfileDetailsAge"
+                app:layout_constraintTop_toBottomOf="@+id/tvProfileDetailsUserName" />
+
+            <TextView
+                android:id="@+id/tvProfileDetailsBio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                android:text="Bio"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivProfileDetailsImg" />
+
+            <View
+                android:id="@+id/viewUnderlineProfileDetails"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/underline"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvProfileDetailsJoined" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvProfileDetails"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewUnderlineProfileDetails" />
+
+            <TextView
+                android:id="@+id/tvProfileDetailsJoinedDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:text="-"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvProfileDetailsBio" />
+
+            <TextView
+                android:id="@+id/tvProfileDetailsJoined"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/profileJoined"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/tvProfileDetailsJoinedDate"
+                app:layout_constraintTop_toTopOf="@+id/tvProfileDetailsJoinedDate" />
+
+            <ProgressBar
+                android:id="@+id/progressBarProfileDetails"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="250dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

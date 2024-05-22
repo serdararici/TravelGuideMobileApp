@@ -82,23 +82,14 @@ class ExploreFragment : Fragment(), SearchView.OnQueryTextListener {
                         println("if calisti")
                     }*/
                 }else{
-                    viewModelExplore.getExploreForCategoryViewModel(category)
-                    /*viewModelExplore.categoryExploreListLive.observe(viewLifecycleOwner) {
-                        val adapter = ExploreAdapter(requireContext(), it, viewModelExplore)
-                        binding.recyclerViewExplore.adapter = adapter
-                        binding.progressBarExplore.visibility = View.GONE
-                        println("else calisti")
-                    }*/
+                    viewModelExplore.getExploreForCategoryViewModel(position.toString())
+
                 }
-
             }
-
             override fun onNothingSelected(p0: AdapterView<*>?) {
 
             }
-
         }
-
         viewModelExplore.exploreListLive.observe(viewLifecycleOwner) {
             val adapter = ExploreAdapter(requireContext(), it, viewModelExplore)
             binding.recyclerViewExplore.adapter = adapter

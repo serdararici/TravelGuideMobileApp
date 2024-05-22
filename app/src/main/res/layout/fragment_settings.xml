@@ -6,14 +6,152 @@
     android:layout_height="match_parent"
     tools:context=".View.SettingsFragment">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="174dp"
-        android:layout_height="102dp"
-        android:layout_marginStart="77dp"
-        android:layout_marginTop="74dp"
-        android:text="Settings"
-        android:textSize="34sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivSettingsProfileImg"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/profile_image"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvSettingsUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="UserName"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/ivSettingsProfileImg"
+                app:layout_constraintStart_toStartOf="@+id/ivSettingsProfileImg"
+                app:layout_constraintTop_toBottomOf="@+id/ivSettingsProfileImg" />
+
+            <TextView
+                android:id="@+id/tvSettingsEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="dddddd@gmail.com"
+                app:layout_constraintEnd_toEndOf="@+id/tvSettingsUserName"
+                app:layout_constraintStart_toStartOf="@+id/tvSettingsUserName"
+                app:layout_constraintTop_toBottomOf="@+id/tvSettingsUserName" />
+
+            <Button
+                android:id="@+id/btnSettingsEditProfile"
+                android:layout_width="114dp"
+                android:layout_height="38dp"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#888888"
+                android:padding="0dp"
+                android:text="@string/btnProfileToProfileEdit"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSettingsEmail" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:background="@color/underline"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnSettingsEditProfile" />
+
+            <TextView
+                android:id="@+id/tvSettingsLanguage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:drawableStart="@drawable/baseline_language_24_black"
+                android:text="@string/language"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view" />
+
+            <Spinner
+                android:id="@+id/spinnerSettingsLanguages"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toStartOf="@+id/btnSettingsApplyLanguage"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSettingsLanguage" />
+
+            <Button
+                android:id="@+id/btnSettingsApplyLanguage"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginEnd="16dp"
+                android:backgroundTint="#888888"
+                android:maxLines="1"
+                android:padding="0dp"
+                android:text="@string/applyChanges"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/spinnerSettingsLanguages"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/spinnerSettingsLanguages" />
+
+            <TextView
+                android:id="@+id/tvSettingsSignOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:drawableStart="@drawable/baseline_logout_24_black"
+                android:text="@string/signOut"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSettingsChangePassword" />
+
+            <ProgressBar
+                android:id="@+id/progressBarSettings"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.553"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.677" />
+
+            <TextView
+                android:id="@+id/tvSettingsChangePassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:text="@string/changePassword"
+                android:drawableStart="@drawable/baseline_lock_24_black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spinnerSettingsLanguages" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

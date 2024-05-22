@@ -38,6 +38,7 @@ class ExploreCreateFragment : Fragment() {
     private val categories = ArrayList<String>()
     private lateinit var categoryAdapter: ArrayAdapter<String>
     var selectedCategory = ""
+    var selectedCategoryPosition = 0
 
     private var uri: Uri?=null
     private var profileImageUri:String?=null
@@ -96,6 +97,7 @@ class ExploreCreateFragment : Fragment() {
         binding.spinnerExploreCreate.onItemSelectedListener = object  : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
                 selectedCategory = categories[position]
+                selectedCategoryPosition = position
 
             }
 
@@ -112,7 +114,7 @@ class ExploreCreateFragment : Fragment() {
             var exploreRatingNumber = binding.exploreCreateRatingBar.rating.toString()
             var exploreCountry = binding.etExploreCreateCountry.text.toString()
             var explorePlace = binding.etExploreCreatePlace.text.toString()
-            var exploreCategory = selectedCategory
+            var exploreCategory = selectedCategoryPosition.toString()
             var explorePlaceName = "${exploreCountry} - ${explorePlace}"
             var exploreCreateDate = System.currentTimeMillis()
 

@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.serdararici.travelguide.Adapter.ExploreAdapter
 import com.serdararici.travelguide.Adapter.ProfileAdapter
 import com.serdararici.travelguide.Model.Explore
@@ -37,6 +38,10 @@ class ProfileFragment : Fragment() {
         this.viewModelProfile = tempViewModel
         val tempViewModelProfileEdit: ProfileEditViewModel by viewModels()
         this.viewModelProfileEdit = tempViewModelProfileEdit
+
+        val bottomNavigationView =
+            requireActivity().findViewById<BottomNavigationView>(R.id.bottomNav)
+        bottomNavigationView.visibility = View.VISIBLE
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -66,6 +71,8 @@ class ProfileFragment : Fragment() {
                 val profile = it[0]
                 binding.tvProfileUserName.text = profile.userName
                 viewModelProfile.exploreCountForUserLive.observe(viewLifecycleOwner){
+                    //bu kısım profil her açıldığında post sayısını veritabanında güncelliyor. Bu kısım daha etkili bir şekilde yapılabilir. Kontro et.
+                    viewModelProfileEdit.updateProfileViewModel(profile.profileId!!,profile.userName!!,profile.userEmail!!,profile.birthDate!!,profile.userBio!!,it.toInt(),profile.profileImgUri!!,profile.profileCreatedDate!!)
                     var exploreCountforUser = it
                     binding.tvProfilePostResult.text = exploreCountforUser.toString()
                 }

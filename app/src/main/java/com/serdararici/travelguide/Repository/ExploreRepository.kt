@@ -18,6 +18,7 @@ class ExploreRepository () {
     var reference = db.getReference("explore")
     val referenceStorage = FirebaseStorage.getInstance().getReference("imagesExplore")
     var exploreListLive:MutableLiveData<List<Explore>>
+    var exploreListFiveLive:MutableLiveData<List<Explore>>
     var userExploreLiveData:MutableLiveData<List<Explore>>
     var categoryExploreLiveData:MutableLiveData<List<Explore>>
     var exploreCountForUserLiveData:MutableLiveData<Long>
@@ -27,6 +28,7 @@ class ExploreRepository () {
 
     init {
         exploreListLive = MutableLiveData()
+        exploreListFiveLive = MutableLiveData()
         userExploreLiveData = MutableLiveData()
         categoryExploreLiveData = MutableLiveData()
         exploreCountForUserLiveData = MutableLiveData()
@@ -36,6 +38,9 @@ class ExploreRepository () {
 
     fun getExploreLive() : MutableLiveData<List<Explore>> {
         return exploreListLive
+    }
+    fun getExploreFiveLive() : MutableLiveData<List<Explore>> {
+        return exploreListFiveLive
     }
     fun getUserExploreListLive() : MutableLiveData<List<Explore>> {
         return userExploreLiveData
@@ -109,6 +114,8 @@ class ExploreRepository () {
                     }
                 }
                 list.sortByDescending { it.exploreCreatedDate }
+                val firstFiveItems = list.take(5)
+                exploreListFiveLive.value = firstFiveItems
                 exploreListLive.value = list
             }
 
@@ -120,6 +127,31 @@ class ExploreRepository () {
     }
 
     fun getExploreForUserRepository(){
+
+        reference.orderByChild("userEmail").equalTo(userEmail).addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val list = ArrayList<Explore>()
+
+                for (d in snapshot.children){
+                    val explore = d.getValue(Explore::class.java)
+                    if (explore != null){
+                        explore.exploreId = d.key
+                        list.add(explore)
+                    }
+                }
+                list.sortByDescending { it.exploreCreatedDate }
+                userExploreLiveData.value = list
+
+                val exploreCountForUser = snapshot.childrenCount
+                exploreCountForUserLiveData.value = exploreCountForUser
+            }
+            override fun onCancelled(error: DatabaseError) {
+                Log.e("FirebaseError", "Firebase error")
+            }
+        })
+    }
+
+    fun getExploreForUserInProfileDetailsRepository(userEmail:String){
 
         reference.orderByChild("userEmail").equalTo(userEmail).addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {

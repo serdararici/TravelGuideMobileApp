@@ -9,7 +9,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/exploreCardView"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:layout_marginBottom="5dp"
         app:cardCornerRadius="10dp"
@@ -25,7 +25,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:ellipsize="end"
                 android:maxLines="1"
@@ -42,6 +41,7 @@
                 android:layout_height="60dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="4dp"
+                android:scaleType="fitXY"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvExploreTitle"
                 app:srcCompat="@drawable/image_not_found" />
@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="4dp"
-                android:layout_marginEnd="32dp"
+                android:layout_marginEnd="16dp"
                 android:ellipsize="end"
                 android:maxLines="3"
                 android:text="dfgfsdljkhbvljkdshblkjdsnbgdsnbjksdbndsbkdsbkldhdfoghdfljkghdskfghdıflhgdlgbjkdbdjklbvfldkjgnbsldfjkgbjkdshgjkdsgbldsdsnb"
@@ -77,13 +77,23 @@
 
             <TextView
                 android:id="@+id/tvExplorePlaceName"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="32dp"
+                android:layout_marginEnd="8dp"
+                android:maxLength="30"
                 android:text="Turkey-Istanbul"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvExploreTxt" />
+                app:layout_constraintTop_toTopOf="@+id/ratingBar" />
+
+            <TextView
+                android:id="@+id/tvExploreUserName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="ddddd@gmail.com"
+                android:textColor="#979797"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

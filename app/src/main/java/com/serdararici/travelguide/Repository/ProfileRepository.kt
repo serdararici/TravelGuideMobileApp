@@ -22,6 +22,7 @@ class ProfileRepository {
     var reference = db.getReference("profile")
     val referenceStorage = FirebaseStorage.getInstance().getReference("images")
     var profileListLive:MutableLiveData<List<Profile>>
+    var profileListFromExploreLive:MutableLiveData<List<Profile>>
     var profileImgUrl:MutableLiveData<String>
 
     val userEmail = FirebaseAuth.getInstance().currentUser?.email
@@ -29,6 +30,7 @@ class ProfileRepository {
     init {
         profileListLive = MutableLiveData()
         profileImgUrl = MutableLiveData()
+        profileListFromExploreLive = MutableLiveData()
     }
 
     fun getProfiles() : MutableLiveData<List<Profile>> {
@@ -82,6 +84,28 @@ class ProfileRepository {
 
     fun getProfileRepository(){
 
+        reference.orderByChild("userEmail").equalTo(userEmail).addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val list = ArrayList<Profile>()
+
+                for (d in snapshot.children){
+                    val profile = d.getValue(Profile::class.java)
+                    if (profile != null){
+                        profile.profileId = d.key
+                        list.add(profile)
+                    }
+                }
+                profileListLive.value = list
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Log.e("FirebaseError", "Firebase error")
+            }
+
+        })
+    }
+
+    fun getProfileFromExploreRepository(userEmail:String){
         reference.orderByChild("userEmail").equalTo(userEmail).addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val list = ArrayList<Profile>()

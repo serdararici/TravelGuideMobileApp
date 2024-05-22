@@ -12,7 +12,7 @@ data class Explore(var exploreId:String?="",
                    var exploreRatingNumber:String?="",
                    var exploreCountry:String?="",
                    var explorePlace:String?="",
-                   var exploreCategory:String?="",
+                   var exploreCategory:String?="0",
                    var exploreCreatedDate:Long?=0,
                    var exploreImageUri:String?="https://firebasestorage.googleapis.com/v0/b/finalhomework-1140c.appspot.com/o/imagesExplore%2F394db0b0-d58c-413b-b634-23a0145ab81e.jpg?alt=media&token=11a9af3b-8395-4bb5-be28-1ea8d60e0184"): Serializable {
 

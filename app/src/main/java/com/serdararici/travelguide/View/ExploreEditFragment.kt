@@ -32,6 +32,7 @@ class ExploreEditFragment : Fragment() {
     private val categories = ArrayList<String>()
     private lateinit var categoryAdapter: ArrayAdapter<String>
     var selectedCategory = ""
+    var selectedCategoryPosition =0
 
     private var uri: Uri?=null
     private var profileImageUri:String?=null
@@ -101,6 +102,7 @@ class ExploreEditFragment : Fragment() {
         binding.spinnerExploreEdit.onItemSelectedListener = object  : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
                 selectedCategory = categories[position]
+                selectedCategoryPosition =position
 
             }
 
@@ -116,7 +118,7 @@ class ExploreEditFragment : Fragment() {
             var ratingExplore = binding.exploreEditRatingBar.rating.toString()
             var exploreCountry = binding.etExploreEditCountry.text.toString()
             var explorePlace = binding.etExploreEditPlace.text.toString()
-            var exploreCategory = selectedCategory
+            var exploreCategory = selectedCategoryPosition.toString()
             var exploreCreatedDate = explore.exploreCreatedDate
             //binding.spinnerExploreEdit
 

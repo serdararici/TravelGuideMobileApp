@@ -13,15 +13,21 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.serdararici.travelguide.R
 import com.serdararici.travelguide.ViewModel.AuthViewModel
+import com.serdararici.travelguide.ViewModel.ProfileViewModel
 import com.serdararici.travelguide.databinding.FragmentSignInBinding
+import com.squareup.picasso.Picasso
 
 class SignInFragment : Fragment() {
     private var _binding: FragmentSignInBinding?=null
     private val binding get() = _binding!!
     private lateinit var navController: NavController
     private val viewModelAuth: AuthViewModel by viewModels()
+    private lateinit var viewModelProfile: ProfileViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val tempViewModelProfile: ProfileViewModel by viewModels()
+        this.viewModelProfile = tempViewModelProfile
 
         val user = viewModelAuth.currentUserViewModel()
         //kullanıcı giriş yaptıysa tekrar giriş ekranı gelmesin
@@ -60,9 +66,11 @@ class SignInFragment : Fragment() {
                     if (success) {
                         // Giriş başarılı, ek işlemleri yapabilirsiniz.
                         val user = viewModelAuth.currentUserViewModel()?.email.toString()
+
                         val intent = Intent(requireContext(), MainActivity::class.java)
                         startActivity(intent)
                         requireActivity().finish()
+
                         /*viewModelProfile.profileListLive.observe(viewLifecycleOwner, Observer { profileList ->
                             if (profileList != null && profileList.isNotEmpty()) {
                                 val profile = profileList[0]

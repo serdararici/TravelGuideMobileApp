@@ -14,24 +14,40 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/ivExploreDetails"
-                android:layout_width="203dp"
-                android:layout_height="145dp"
-                android:layout_marginTop="24dp"
-                android:src="@drawable/image_not_found"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivPExploreDetailsImg"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/profile_image"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="2dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivExploreDetails"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="32dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/image_not_found"
+                app:layout_constraintBottom_toTopOf="@+id/tvExploreDetailsTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvExploreDetailsUserName" />
 
             <TextView
                 android:id="@+id/tvExploreDetailsTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
-                android:text="Başlık"
+                android:text="Başlık "
                 android:textSize="34sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -41,20 +57,20 @@
                 android:id="@+id/tvExploreDetailsTxt"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="24dp"
                 android:text="Detay kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvExploreDetailsTitle" />
+                app:layout_constraintTop_toBottomOf="@+id/tvExploreDetailsCategory" />
 
             <RatingBar
                 android:id="@+id/ratingBarExploreDetails"
                 style="@style/Widget.AppCompat.RatingBar.Indicator"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
                 android:numStars="5"
                 android:progressTint="#FFC107"
@@ -68,7 +84,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="24dp"
                 android:text="Istanbul - Turkey"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvExploreDetailsTxt" />
@@ -91,7 +107,7 @@
                 android:id="@+id/tvExploreDetailsCreatedDateResult"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="24dp"
                 android:text="-"
                 android:textSize="10sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -101,12 +117,23 @@
                 android:id="@+id/tvExploreDetailsCategory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="4dp"
+                android:layout_marginEnd="24dp"
                 android:text="Yemek ve kültür"
                 android:textColor="#606060"
-                app:layout_constraintBottom_toTopOf="@+id/tvExploreDetailsTxt"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvExploreDetailsTitle" />
+
+            <TextView
+                android:id="@+id/tvExploreDetailsUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="UserName"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/ivPExploreDetailsImg"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

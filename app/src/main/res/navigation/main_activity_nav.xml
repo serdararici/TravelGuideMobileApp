@@ -46,6 +46,9 @@
         <action
             android:id="@+id/action_exploreFragment_to_exploreCreateFragment"
             app:destination="@id/exploreCreateFragment" />
+        <action
+            android:id="@+id/action_exploreFragment_to_profileDetailsFragment"
+            app:destination="@id/profileDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -94,6 +97,12 @@
         <action
             android:id="@+id/action_settingsFragment_to_signOutFragment"
             app:destination="@id/signOutFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
     </fragment>
     <fragment
         android:id="@+id/googleMapFragment"
@@ -149,6 +158,12 @@
         <action
             android:id="@+id/action_exploreDetailsFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_exploreDetailsFragment_to_profileDetailsFragment"
+            app:destination="@id/profileDetailsFragment" />
+        <argument
+            android:name="ExploreDetailsFromProfileDetails"
+            app:argType="com.serdararici.travelguide.Model.Explore" />
     </fragment>
     <fragment
         android:id="@+id/exploreCreateFragment"
@@ -182,5 +197,29 @@
         <argument
             android:name="exploreEdit"
             app:argType="com.serdararici.travelguide.Model.Explore" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileDetailsFragment"
+        android:name="com.serdararici.travelguide.View.ProfileDetailsFragment"
+        android:label="fragment_profile_details"
+        tools:layout="@layout/fragment_profile_details" >
+        <action
+            android:id="@+id/action_profileDetailsFragment_to_exploreFragment"
+            app:destination="@id/exploreFragment" />
+        <argument
+            android:name="profileDetails"
+            app:argType="com.serdararici.travelguide.Model.Explore" />
+        <action
+            android:id="@+id/action_profileDetailsFragment_to_exploreDetailsFragment"
+            app:destination="@id/exploreDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="com.serdararici.travelguide.View.ChangePasswordFragment"
+        android:label="fragment_change_password"
+        tools:layout="@layout/fragment_change_password" >
+        <action
+            android:id="@+id/action_changePasswordFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
     </fragment>
 </navigation>

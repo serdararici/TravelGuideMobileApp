@@ -1,6 +1,504 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.MainFragment" />
+    tools:context=".View.MainFragment">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivProfileImg"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:src="@drawable/profile_image"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvHomeGooddays"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="36dp"
+                android:text="@string/goodDays"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/viewUnderlineHome"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/underline"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvHomeUserName" />
+
+            <TextView
+                android:id="@+id/tvHomeUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="4dp"
+                android:text="UserName"
+                android:textSize="24sp"
+                android:textStyle="italic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvHomeGooddays" />
+
+            <ViewFlipper
+                android:id="@+id/viewFlipperHome"
+                android:layout_width="0dp"
+                android:layout_height="250dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:autoStart="true"
+                android:flipInterval="2000"
+                android:inAnimation="@anim/slide_in_right"
+                android:outAnimation="@anim/slide_out_left"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewUnderlineHome">
+
+                <!-- Slider Item 1 -->
+
+                <ImageView
+                    android:id="@+id/imagiViewHome1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/travelguide_logo" />
+
+                <!-- Slider Item 2 -->
+                <ImageView
+                    android:id="@+id/imagiViewHome2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/rome" />
+
+                <!-- Slider Item 3 -->
+                <ImageView
+                    android:id="@+id/imagiViewHome3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/paris" />
+                <!-- Slider Item 4 -->
+                <ImageView
+                    android:id="@+id/imagiViewHome4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/budapest" />
+                <!-- Slider Item 5 -->
+                <ImageView
+                    android:id="@+id/imagiViewHome5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/amsterdam" />
+                <!-- Slider Item 6 -->
+                <ImageView
+                    android:id="@+id/imagiViewHome6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/brazil" />
+                <!-- Slider Item 7 -->
+                <ImageView
+                    android:id="@+id/imagiViewHome7"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/newyork" />
+                <!-- Slider Item 8 -->
+                <ImageView
+                    android:id="@+id/imagiViewHome8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/warsaw" />
+                <!-- Slider Item 9 -->
+                <ImageView
+                    android:id="@+id/imagiViewHome9"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/tokyo" />
+
+
+            </ViewFlipper>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/home_menu_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewFlipperHome">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvHomeMenuExplore"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:ellipsize="end"
+                    android:outlineSpotShadowColor="@android:color/transparent"
+                    android:singleLine="true"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:layout_constraintEnd_toStartOf="@+id/cvHomeMenuCountry"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/tvHomeMenuExplore"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/explore"
+                            android:textColor="#FFFFFF"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="@+id/ivHomeMenuExplore"
+                            app:layout_constraintStart_toStartOf="@+id/ivHomeMenuExplore"
+                            app:layout_constraintTop_toBottomOf="@+id/ivHomeMenuExplore" />
+
+                        <View
+                            android:id="@+id/viewHomeMenuExplore"
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"
+                            android:background="#FFFFFF"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/ivHomeMenuExplore"
+                            android:layout_width="60dp"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="16dp"
+                            android:src="@drawable/baseline_explore_24_white"
+                            app:layout_constraintEnd_toStartOf="@+id/viewHomeMenuExplore"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvHomeMenuCountry"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:ellipsize="end"
+                    android:outlineSpotShadowColor="@android:color/transparent"
+                    android:singleLine="true"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:layout_constraintEnd_toStartOf="@+id/cvHomeMenuChatbot"
+                    app:layout_constraintStart_toEndOf="@+id/cvHomeMenuExplore"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/tvHomeMenuCountry"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/countries"
+                            android:textColor="#FFFFFF"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="@+id/ivHomeMenuCountry"
+                            app:layout_constraintStart_toStartOf="@+id/ivHomeMenuCountry"
+                            app:layout_constraintTop_toBottomOf="@+id/ivHomeMenuCountry" />
+
+                        <View
+                            android:id="@+id/viewHomeMenuCountry"
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"
+                            android:background="#FFFFFF"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/ivHomeMenuCountry"
+                            android:layout_width="60dp"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="2dp"
+                            android:src="@drawable/baseline_airplanemode_active_24_white"
+                            app:layout_constraintBottom_toTopOf="@+id/tvHomeMenuCountry"
+                            app:layout_constraintEnd_toStartOf="@+id/viewHomeMenuCountry"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvHomeMenuChatbot"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:ellipsize="end"
+                    android:outlineSpotShadowColor="@android:color/transparent"
+                    android:singleLine="true"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/cvHomeMenuCountry"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/tvHomeMenuChatbot"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/chatBot"
+                            android:textColor="#FFFFFF"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="@+id/ivHomeMenuChatbot"
+                            app:layout_constraintStart_toStartOf="@+id/ivHomeMenuChatbot"
+                            app:layout_constraintTop_toBottomOf="@+id/ivHomeMenuChatbot" />
+
+
+                        <ImageView
+                            android:id="@+id/ivHomeMenuChatbot"
+                            android:layout_width="60dp"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="16dp"
+                            android:src="@drawable/baseline_chat_24_white"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <View
+                    android:id="@+id/view3"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#FFFFFF"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cvHomeMenuExplore" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvHomeMenuMap"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:ellipsize="end"
+                    android:outlineSpotShadowColor="@android:color/transparent"
+                    android:singleLine="true"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:layout_constraintEnd_toStartOf="@+id/cvHomeMenuSettings"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view3">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/tvHomeMenuMap"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/map"
+                            android:textColor="#FFFFFF"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="@+id/ivHomeMenuMap"
+                            app:layout_constraintStart_toStartOf="@+id/ivHomeMenuMap"
+                            app:layout_constraintTop_toBottomOf="@+id/ivHomeMenuMap" />
+
+                        <View
+                            android:id="@+id/viewHomeMenuMap"
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"
+                            android:background="#FFFFFF"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/ivHomeMenuMap"
+                            android:layout_width="60dp"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="8dp"
+                            android:src="@drawable/baseline_map_24_white"
+                            app:layout_constraintEnd_toStartOf="@+id/viewHomeMenuMap"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvHomeMenuSettings"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:ellipsize="end"
+                    android:outlineSpotShadowColor="@android:color/transparent"
+                    android:singleLine="true"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:layout_constraintEnd_toStartOf="@+id/cvHomeMenuProfile"
+                    app:layout_constraintStart_toEndOf="@+id/cvHomeMenuMap"
+                    app:layout_constraintTop_toBottomOf="@+id/view3">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/tvHomeMenuSettings"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/settings"
+                            android:textColor="#FFFFFF"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="@+id/ivHomeMenuSettings"
+                            app:layout_constraintStart_toStartOf="@+id/ivHomeMenuSettings"
+                            app:layout_constraintTop_toBottomOf="@+id/ivHomeMenuSettings" />
+
+                        <View
+                            android:id="@+id/viewHomeMenuSettings"
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"
+                            android:background="#FFFFFF"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/ivHomeMenuSettings"
+                            android:layout_width="60dp"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="8dp"
+                            android:src="@drawable/baseline_settings_24_white"
+                            app:layout_constraintEnd_toStartOf="@+id/viewHomeMenuSettings"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvHomeMenuProfile"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:ellipsize="end"
+                    android:outlineSpotShadowColor="@android:color/transparent"
+                    android:singleLine="true"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/cvHomeMenuSettings"
+                    app:layout_constraintTop_toBottomOf="@+id/view3">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/tvHomeMenuProfile"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/profile"
+                            android:textColor="#FFFFFF"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="@+id/ivHomeMenuProfile"
+                            app:layout_constraintStart_toStartOf="@+id/ivHomeMenuProfile"
+                            app:layout_constraintTop_toBottomOf="@+id/ivHomeMenuProfile" />
+
+
+                        <ImageView
+                            android:id="@+id/ivHomeMenuProfile"
+                            android:layout_width="60dp"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="8dp"
+                            android:src="@drawable/baseline_person_24_white"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ProgressBar
+                android:id="@+id/progressBarHomeForProfile"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/viewUnderlineHome"
+                app:layout_constraintEnd_toStartOf="@+id/ivProfileImg"
+                app:layout_constraintStart_toEndOf="@+id/tvHomeUserName"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvRecentlyAddedHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/recentlyAdded"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvHomeExplore"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvRecentlyAddedHome" />
+
+            <TextView
+                android:id="@+id/tvSeeAllHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:text="@string/seeAll"
+                android:textColor="@color/my_light_primary"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

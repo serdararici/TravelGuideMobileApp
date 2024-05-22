@@ -51,7 +51,7 @@ class ProfileAdapter(var context: Context,var exploreList:List<Explore>,var view
             .into(imageView)
 
         holder.binding.exploreCardView.setOnClickListener {
-            var action = ProfileFragmentDirections.actionProfileFragmentToExploreDetailsFragment(explore)
+            var action = ProfileFragmentDirections.actionProfileFragmentToExploreDetailsFragment(explore,explore)
             Navigation.findNavController(it).navigate(action)
         }
 

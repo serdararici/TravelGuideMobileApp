@@ -58,6 +58,10 @@ class ProfileViewModel : ViewModel() {
         exploreRepo.getExploreForUserRepository()
     }
 
+    fun getExploreForUserInProfileDetailsViewModel(userEmail:String){
+        exploreRepo.getExploreForUserInProfileDetailsRepository(userEmail)
+    }
+
     fun deleteExploreViewModel(exploreId:String){
         exploreRepo.deleteExploreRepository(exploreId)
     }
