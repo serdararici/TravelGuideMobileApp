@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.serdararici.travelguide.Model.Explore
+import com.serdararici.travelguide.View.MainFragmentDirections
 import com.serdararici.travelguide.View.ProfileDetailsFragmentDirections
 import com.serdararici.travelguide.ViewModel.ProfileViewModel
 import com.serdararici.travelguide.databinding.HomeExploreRecyclerRowBinding
@@ -45,7 +46,7 @@ class HomeExploreAdapter  (var context: Context, var exploreList:List<Explore>)
             .into(imageView)
 
         holder.binding.exploreCardView.setOnClickListener {
-            var action = ProfileDetailsFragmentDirections.actionProfileDetailsFragmentToExploreDetailsFragment(explore,explore)
+            var action = MainFragmentDirections.actionMainFragmentToExploreDetailsFragment(explore,explore)
             Navigation.findNavController(it).navigate(action)
         }
     }

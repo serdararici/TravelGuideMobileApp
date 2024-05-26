@@ -31,6 +31,12 @@
         <action
             android:id="@+id/action_mainFragment_to_signOutFragment"
             app:destination="@id/signOutFragment" />
+        <action
+            android:id="@+id/action_mainFragment_self"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_exploreDetailsFragment"
+            app:destination="@id/exploreDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/exploreFragment"

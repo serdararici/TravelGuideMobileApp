@@ -19,6 +19,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.serdararici.travelguide.Adapter.ExploreAdapter
 import com.serdararici.travelguide.Model.Explore
 import com.serdararici.travelguide.R
@@ -39,6 +40,10 @@ class ExploreFragment : Fragment(), SearchView.OnQueryTextListener {
         super.onCreate(savedInstanceState)
         val tempViewModel: ExploreViewModel by viewModels()
         this.viewModelExplore = tempViewModel
+
+        val bottomNavigationView =
+            requireActivity().findViewById<BottomNavigationView>(R.id.bottomNav)
+        bottomNavigationView.visibility = View.VISIBLE
     }
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

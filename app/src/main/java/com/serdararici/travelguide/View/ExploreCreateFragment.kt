@@ -118,6 +118,8 @@ class ExploreCreateFragment : Fragment() {
             var explorePlaceName = "${exploreCountry} - ${explorePlace}"
             var exploreCreateDate = System.currentTimeMillis()
 
+            binding.progressBarExploreCreate.visibility = View.VISIBLE
+
             viewModelProfile.profileListLive.observe(viewLifecycleOwner) {
                 if (it != null) {
                     val profile = it[0]
@@ -141,6 +143,7 @@ class ExploreCreateFragment : Fragment() {
                                 viewModelExploreCreate.exploreCreateViewModel(userEmail,exploreTitle,exploreDetails,exploreRatingNumber,exploreCountry,explorePlace,exploreCategory,exploreCreateDate,url.toString())
                                 numberOfPosts = numberOfPosts!! + 1
                                 viewModelProfileEdit.updateProfileViewModel(profileId!!,userName!!,userEmail!!,birthDate!!,userBio!!,numberOfPosts!!,profileImageUrl!!,profileCreatedDate!!)
+                                binding.progressBarExploreCreate.visibility = View.GONE
                                 navController.navigate(R.id.action_exploreCreateFragment_to_exploreFragment)
                                 Toast.makeText(requireActivity(),R.string.exploreCreateMessage,Toast.LENGTH_LONG).show()
                             }
@@ -151,6 +154,7 @@ class ExploreCreateFragment : Fragment() {
                             viewModelExploreCreate.exploreCreateViewModel(userEmail,exploreTitle,exploreDetails,exploreRatingNumber,exploreCountry,explorePlace,exploreCategory,exploreCreateDate,existingImageUrl)
                             numberOfPosts = numberOfPosts!! + 1
                             viewModelProfileEdit.updateProfileViewModel(profileId!!,userName!!,userEmail!!,birthDate!!,userBio!!,numberOfPosts!!,profileImageUrl!!,profileCreatedDate!!)
+                            binding.progressBarExploreCreate.visibility = View.GONE
                             navController.navigate(R.id.action_exploreCreateFragment_to_exploreFragment)
                             Toast.makeText(requireActivity(),R.string.exploreCreateMessage,Toast.LENGTH_LONG).show()
                         }

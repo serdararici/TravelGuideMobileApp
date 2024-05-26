@@ -99,6 +99,8 @@ class ExploreEditFragment : Fragment() {
         categoryAdapter = ArrayAdapter(requireContext(),android.R.layout.simple_list_item_1,android.R.id.text1,categories)
         binding.spinnerExploreEdit.adapter = categoryAdapter
 
+        binding.spinnerExploreEdit.setSelection(explore.exploreCategory!!.toInt())
+
         binding.spinnerExploreEdit.onItemSelectedListener = object  : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
                 selectedCategory = categories[position]
@@ -122,7 +124,7 @@ class ExploreEditFragment : Fragment() {
             var exploreCreatedDate = explore.exploreCreatedDate
             //binding.spinnerExploreEdit
 
-
+            binding.progressBarExploreEdit.visibility = View.VISIBLE
 
             var exploreId = explore.exploreId
 
@@ -133,6 +135,7 @@ class ExploreEditFragment : Fragment() {
                     viewModelExploreEdit.exploreImgUrl.removeObservers(viewLifecycleOwner) // Önceki gözlemcileri kaldır
                     viewModelExploreEdit.exploreImgUrl.observe(viewLifecycleOwner) { url ->
                         viewModelExploreEdit.updateExploreViewModel(exploreId!!, exploreTitle, exploreDetails, ratingExplore, exploreCountry,explorePlace,exploreCategory,exploreCreatedDate!!, url.toString())
+                        binding.progressBarExploreEdit.visibility = View.GONE
                         navController.navigate(R.id.action_exploreEditFragment_to_profileFragment)
                         Toast.makeText(requireActivity(),R.string.exploreUpdateMessage,Toast.LENGTH_LONG).show()
                     }
@@ -140,6 +143,7 @@ class ExploreEditFragment : Fragment() {
                     // Resim seçilmediyse mevcut resmi kullan
                     val existingImageUrl = explore.exploreImageUri ?: ""
                     viewModelExploreEdit.updateExploreViewModel(exploreId!!, exploreTitle, exploreDetails, ratingExplore, exploreCountry,explorePlace,exploreCategory,exploreCreatedDate!!, existingImageUrl)
+                    binding.progressBarExploreEdit.visibility = View.GONE
                     navController.navigate(R.id.action_exploreEditFragment_to_profileFragment)
                     Toast.makeText(requireActivity(),R.string.exploreUpdateMessage,Toast.LENGTH_LONG).show()
                 }

@@ -4,7 +4,6 @@ import com.serdararici.travelguide.Service.CountriesAPI
 import com.serdararici.travelguide.Service.RetrofitClient
 
 class ApiUtils {
-
     companion object{
         val BASE_URL = "https://restcountries.com/"
 
