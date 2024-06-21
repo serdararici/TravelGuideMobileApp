@@ -94,6 +94,7 @@ class MainFragment : Fragment() {
         viewModelExplore.exploreListFiveLive.observe(viewLifecycleOwner){
             val adapter = HomeExploreAdapter(requireContext(),it)
             binding.rvHomeExplore.adapter = adapter
+            binding.progressBarHomeForExplore.visibility = View.GONE
             /*val imageView1 = binding.imagiViewHome1
             Picasso.get()
                 .load(it[2].exploreImageUri)

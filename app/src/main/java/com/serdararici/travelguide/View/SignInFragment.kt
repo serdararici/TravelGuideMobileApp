@@ -62,6 +62,7 @@ class SignInFragment : Fragment() {
             val password=binding.etPasswordSignIn.text.toString()
 
             if(checkAll()){
+                binding.progressBarSignIn.visibility = View.VISIBLE
                 viewModelAuth.signInViewModel(email,password){ success, message ->
                     if (success) {
                         // Giriş başarılı, ek işlemleri yapabilirsiniz.

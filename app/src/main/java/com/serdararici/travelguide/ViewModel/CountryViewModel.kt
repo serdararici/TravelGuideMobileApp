@@ -22,6 +22,10 @@ import retrofit2.Response
 class CountryViewModel : ViewModel() {
     private val _countries = MutableLiveData<List<Country>>()
     val countries: LiveData<List<Country>> = _countries
+
+    private val _countryDetails = MutableLiveData<Country>()
+    val countryDetails: LiveData<Country> = _countryDetails
+
     //private val countries = ArrayList<String>()
     //private lateinit var countryAdapter: ArrayAdapter<String>
     private val _responseText = MutableLiveData<String>()
@@ -31,6 +35,7 @@ class CountryViewModel : ViewModel() {
 
     init {
         fetchCountries()
+        //fetchCountryNames()
     }
 
     private fun fetchCountries() {
@@ -57,7 +62,7 @@ class CountryViewModel : ViewModel() {
         })
     }
 
-    fun fetchCountries1() {
+    /*fun fetchCountries1() {
         val apiService = ApiUtils.getCountriesAPI()
 
         apiService.getCountries().enqueue(object : Callback<List<Country>> {
@@ -85,7 +90,7 @@ class CountryViewModel : ViewModel() {
                 Log.e("Error", "API call failed: ${t.message}")
             }
         })
-    }
+    }*/
 
     fun generateContent(cityName: String) {
         viewModelScope.launch {
@@ -97,5 +102,53 @@ class CountryViewModel : ViewModel() {
             val response = generativeModel.generateContent(prompt)
             _responseText.value = response.text
         }
+    }
+
+
+    //////
+    private fun fetchCountryNames() {
+        val apiService = ApiUtils.getCountriesAPI()
+        apiService.getCountryNames().enqueue(object : Callback<List<Country>> {
+            override fun onResponse(call: Call<List<Country>>, response: Response<List<Country>>) {
+                if (response.isSuccessful) {
+                    val unsortedCountries = response.body() ?: emptyList()
+
+                    // Listeyi alfabetik sırayla düzenleyin
+                    val sortedCountries = unsortedCountries.sortedBy { it.name.common }
+
+                    _countries.value = sortedCountries
+                } else {
+                    // Hata yönetimi
+                    Log.e("Error", "Response code: ${response.code()}")
+                }
+            }
+
+            override fun onFailure(call: Call<List<Country>>, t: Throwable) {
+                // Hata yönetimi
+                Log.e("Error", "API call failed: ${t.message}")
+            }
+        })
+    }
+
+    fun fetchCountryDetails(countryName: String) {
+        val apiService = ApiUtils.getCountriesAPI()
+        apiService.getCountryDetails(countryName).enqueue(object : Callback<List<Country>> {
+            override fun onResponse(call: Call<List<Country>>, response: Response<List<Country>>) {
+                if (response.isSuccessful) {
+                    val countries = response.body() ?: emptyList()
+                    if (countries.isNotEmpty()) {
+                        _countryDetails.value = countries[0]
+                    }
+                } else {
+                    // Hata yönetimi
+                    Log.e("Error", "Response code: ${response.code()}")
+                }
+            }
+
+            override fun onFailure(call: Call<List<Country>>, t: Throwable) {
+                // Hata yönetimi
+                Log.e("Error", "API call failed: ${t.message}")
+            }
+        })
     }
 }

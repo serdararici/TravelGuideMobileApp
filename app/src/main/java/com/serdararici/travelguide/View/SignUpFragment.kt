@@ -43,6 +43,8 @@ class SignUpFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         navController = Navigation.findNavController(view)
 
+        binding.etBirthDate.isFocusable = false
+
         binding.etBirthDate.setOnClickListener {
             val calendar = Calendar.getInstance()
             val year = calendar.get(Calendar.YEAR)
@@ -77,6 +79,7 @@ class SignUpFragment : Fragment() {
             //var profileImgUri =  //buraya default bir link verilcek
 
             if (checkAll()) {
+                binding.progressBarSignUp.visibility = View.VISIBLE
                 viewModel.signUpViewModel(email, password) { success, message ->
                     if(success){
                         viewModelProfile.profileCreateViewModel(userName,email,birthDate,"",0,"https://firebasestorage.googleapis.com/v0/b/finalhomework-1140c.appspot.com/o/images%2F-NxZ2L-b3Gm9T4VHyewB?alt=media&token=f5bc8d4b-3450-4c4b-a3ce-885932dcea64",profileCreateDate)

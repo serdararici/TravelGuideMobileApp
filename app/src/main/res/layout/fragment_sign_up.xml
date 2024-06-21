@@ -185,4 +185,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/sin_up_icon" />
 
+    <ProgressBar
+        android:id="@+id/progressBarSignUp"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@+id/btnSignUp"
+        app:layout_constraintTop_toTopOf="@+id/btnSignUp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

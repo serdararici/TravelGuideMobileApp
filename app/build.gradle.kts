@@ -5,6 +5,7 @@ plugins {
     id("androidx.navigation.safeargs")
     id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
     id("com.google.gms.google-services")
+    kotlin("kapt")
 }
 
 android {
@@ -52,6 +53,7 @@ android {
 }
 
 val nav_version = "2.7.7"
+val room_version = "2.6.1"
 dependencies {
 
     implementation(libs.androidx.core.ktx)
@@ -99,6 +101,14 @@ dependencies {
     implementation(libs.firebase.database)
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-storage:21.0.0")
+    // Room components
+    implementation ("androidx.room:room-runtime:$room_version")
+    kapt("androidx.room:room-compiler:$room_version")
+    // Kotlin extensions and Coroutines support for Room
+    implementation ("androidx.room:room-ktx:$room_version")
+    // Coroutines
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
 
 
 }

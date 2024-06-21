@@ -56,6 +56,7 @@ class ProfileEditFragment : Fragment() {
         val toolbar = (activity as AppCompatActivity).supportActionBar?.setTitle(R.string.profile)
 
         navController = Navigation.findNavController(view)
+        binding.etProfileBirthDate.isFocusable = false
 
         val bundle:ProfileEditFragmentArgs by navArgs()
         val profile = bundle.profileEdit
@@ -96,7 +97,7 @@ class ProfileEditFragment : Fragment() {
                 viewModelProfileEdit.saveProfileImgViewModel(it, profileId!!)
             }*/
                 if (checkAll()){
-
+                    binding.progressBarEditProfile.visibility=View.VISIBLE
                     uri?.let {
                         viewModelProfileEdit.saveProfileImgViewModel(it, profileId!!)
                         viewModelProfileEdit.profileImgUrl.removeObservers(viewLifecycleOwner) // Önceki gözlemcileri kaldır

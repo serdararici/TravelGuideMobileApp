@@ -1,5 +1,6 @@
 package com.serdararici.travelguide.Service
 
+import okhttp3.Cache
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -8,8 +9,10 @@ import java.util.concurrent.TimeUnit
 class RetrofitClient {
 
     companion object{
-        private const val TIMEOUT = 90L // 30 second
+        private const val TIMEOUT = 900L // 90 second
         fun getClient(baseUrl:String): Retrofit {
+
+
             val okHttpClient = OkHttpClient.Builder()
                 .connectTimeout(TIMEOUT, TimeUnit.SECONDS)
                 .readTimeout(TIMEOUT, TimeUnit.SECONDS)

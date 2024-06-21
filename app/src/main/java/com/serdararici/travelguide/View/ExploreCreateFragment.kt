@@ -118,7 +118,7 @@ class ExploreCreateFragment : Fragment() {
             var explorePlaceName = "${exploreCountry} - ${explorePlace}"
             var exploreCreateDate = System.currentTimeMillis()
 
-            binding.progressBarExploreCreate.visibility = View.VISIBLE
+
 
             viewModelProfile.profileListLive.observe(viewLifecycleOwner) {
                 if (it != null) {
@@ -133,7 +133,7 @@ class ExploreCreateFragment : Fragment() {
 
 
                     if (checkAll()){
-
+                        binding.progressBarExploreCreate.visibility = View.VISIBLE
                         val imageId = "${uuid}.jpg"
 
                         uri?.let {

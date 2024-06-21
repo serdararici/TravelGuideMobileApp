@@ -61,13 +61,17 @@ class ExploreFragment : Fragment(), SearchView.OnQueryTextListener {
         binding.fabExplore.setOnClickListener {
             Navigation.findNavController(it).navigate(R.id.action_exploreFragment_to_exploreCreateFragment)
         }
-        categories.add(getString(R.string.all))
-        categories.add(getString(R.string.history))
-        categories.add(getString(R.string.transportationAndAccommodation))
-        categories.add(getString(R.string.food))
-        categories.add(getString(R.string.natureAndAdvanture))
-        categories.add(getString(R.string.Entertainment))
-        categories.add(getString(R.string.ExpreinceAndSuggestion))
+
+        if(categories.size==0){
+            categories.add(getString(R.string.all))
+            categories.add(getString(R.string.history))
+            categories.add(getString(R.string.transportationAndAccommodation))
+            categories.add(getString(R.string.food))
+            categories.add(getString(R.string.natureAndAdvanture))
+            categories.add(getString(R.string.Entertainment))
+            categories.add(getString(R.string.ExpreinceAndSuggestion))
+        }
+
 
         categoryAdapter = ArrayAdapter(requireContext(),android.R.layout.simple_list_item_1,android.R.id.text1,categories)
         binding.spinnerExplore.adapter = categoryAdapter
