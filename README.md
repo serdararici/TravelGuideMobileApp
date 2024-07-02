@@ -21,4 +21,4 @@ Uygulama tasarımı, kullanıcı dostu ve işlevsel özelliklerle zenginleştiri
 ## Sonuçlar 
 TravelGuide, seyahat alışkanlıklarınıza uyum sağlayarak deneyimlerinizi kolaylaştıran bir uygulamadır. Harita entegrasyonları ve yapay zeka destekli bir chatbot gibi özellikler sunar. Kullanıcılar, deneyimlerini paylaşabilecekleri özel bir sayfadan faydalanabilir, bu da diğer kullanıcıların daha bilinçli seyahat planları yapmalarına yardımcı olur. Başlangıçta hedeflenen özellikler başarıyla entegre edilmiş olsa da, TravelGuide sürekli olarak geliştirilmekte ve yeni özellikler eklenmektedir. Bu da uygulamanın potansiyelini artırarak kullanıcı deneyimini iyileştirir.
 
-![Project Poster]([https://github.com/kullaniciadi/projeadi/blob/main/resim.jpg](https://github.com/serdararici/TravelGuideMobileApp/blob/master/Foto-Poster.png))
+![Project Poster](https://github.com/serdararici/TravelGuideMobileApp/blob/master/Foto-Poster.png?raw=true)
