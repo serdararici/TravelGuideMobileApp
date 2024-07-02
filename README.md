@@ -3,6 +3,8 @@
 
 Bu proje, Sakarya Üniversitesi bitirme ödevi kapsamında hazırladığım yapay zeka destekli seyahat rehberi mobil uygulamasıdır. Bu projede, yapay zekanın mobil uygulamalara entegrasyon sürecini ele aldım. Özellikle, Google Gemini API'sini kullanarak yapay zekanın mobil uygulamalara nasıl entegre edilebileceğini inceledim ve uyguladım. Bu entegrasyon sayesinde kullanıcılar, seyahat planlamalarında daha akıllı ve kişiselleştirilmiş öneriler alabilecekler. Projem, seyahat rehberliği alanında yapay zeka teknolojilerinin pratik kullanımını gösteren bir örnek niteliğindedir.
 
+![Project Poster](https://github.com/serdararici/TravelGuideMobileApp/blob/master/Foto-Poster.png?raw=true)
+
 ## Giriş
 Günümüzde seyahat etme alışkanlıklarındaki değişimlerle paralel olarak geliştirilen "Travel Guide" adlı mobil uygulama, kullanıcıların seyahat deneyimlerini kolaylaştırmayı hedefliyor. Kullanıcı dostu arayüzü ve kapsamlı özellikleriyle öne çıkan bu uygulama, seyahat tutkunlarının ihtiyaçlarını karşılamak ve seyahat etmeyi daha keyifli hale getirmek için tasarlanmıştır. Uygulama, kullanıcıların gezdikleri yerler hakkında deneyimlerini paylaşmalarına olanak tanırken, yapay zeka destekli ülke tanıtım sayfası ve Chatbot gibi özelliklerle seyahat planlamasını kolaylaştırıyor.
 ## Kullanılan Yöntem ve Yaklaşım
@@ -21,4 +23,3 @@ Uygulama tasarımı, kullanıcı dostu ve işlevsel özelliklerle zenginleştiri
 ## Sonuçlar 
 TravelGuide, seyahat alışkanlıklarınıza uyum sağlayarak deneyimlerinizi kolaylaştıran bir uygulamadır. Harita entegrasyonları ve yapay zeka destekli bir chatbot gibi özellikler sunar. Kullanıcılar, deneyimlerini paylaşabilecekleri özel bir sayfadan faydalanabilir, bu da diğer kullanıcıların daha bilinçli seyahat planları yapmalarına yardımcı olur. Başlangıçta hedeflenen özellikler başarıyla entegre edilmiş olsa da, TravelGuide sürekli olarak geliştirilmekte ve yeni özellikler eklenmektedir. Bu da uygulamanın potansiyelini artırarak kullanıcı deneyimini iyileştirir.
 
-![Project Poster](https://github.com/serdararici/TravelGuideMobileApp/blob/master/Foto-Poster.png?raw=true)
